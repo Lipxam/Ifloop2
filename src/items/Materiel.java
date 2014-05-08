@@ -1,6 +1,6 @@
 package items;
 
-public class Materiél extends Item implements Moveable
+public class Materiel extends Item implements Moveable
 {
 	Direction moveDirection;
 	
