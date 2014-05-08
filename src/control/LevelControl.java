@@ -14,12 +14,11 @@ public class LevelControl
 		{
 			i.step();
 			
-			//duplicate materiels
 			if(i instanceof Materiel)
 			{
 				Materiel mat = (Materiel)i;
 				
-				items.add(mat.stepChild());
+				//TODO move materiel if applicable
 			}
 		}
 	}

@@ -17,6 +17,4 @@ public abstract class Materiel extends Item implements Moveable
 	{
 		return moveDirection;
 	}
-	
-	public abstract Materiel stepChild();
 }
