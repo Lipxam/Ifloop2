@@ -2,6 +2,7 @@ package items;
 
 public abstract class Item 
 {
-	int x, y, width, height;
+	int row, col, width, height;
 	
+	public abstract void step();
 }
