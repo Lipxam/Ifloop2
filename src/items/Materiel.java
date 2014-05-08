@@ -2,6 +2,9 @@ package items;
 
 public class Materiel extends Item implements Moveable
 {
+	//where this came from
+	Machine parent;
+	
 	Direction moveDirection;
 	
 	public boolean inMotion()
