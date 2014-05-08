@@ -1,6 +1,6 @@
 package items;
 
-public class Materiel extends Item implements Moveable
+public abstract class Materiel extends Item implements Moveable
 {
 	//where this came from
 	Machine parent;
@@ -17,4 +17,6 @@ public class Materiel extends Item implements Moveable
 	{
 		return moveDirection;
 	}
+	
+	public abstract Materiel stepChild();
 }
