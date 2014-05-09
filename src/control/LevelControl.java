@@ -1,16 +1,14 @@
 package control;
 
-import items.Item;
-import items.Materiel;
-import java.util.List;
+import items.*;
 
 public class LevelControl
 {	
-	List<Item> items;
-	
+	Grid grid = new Grid();
+
 	public void step()
 	{
-		for(Item i: items)
+		for(Item i: grid.getItems())
 		{
 			i.step();
 			
@@ -18,7 +16,13 @@ public class LevelControl
 			{
 				Materiel mat = (Materiel)i;
 				
-				//TODO move materiel if applicable
+				//TODO remove materiel if applicable
+			}
+			else if(i instanceof Machine)
+			{
+				//TODO gather all materiels in i's location
+				//TODO step i with inputs
+				//TODO get outputs
 			}
 		}
 	}

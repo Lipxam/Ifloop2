@@ -1,8 +1,15 @@
 package items;
 
+
 public abstract class Item 
 {
-	int row, col, width, height;
+	int width, height;
+	Location loc;
 	
 	public abstract void step();
+
+	public Location getLocation()
+	{
+		return loc;
+	}
 }
