@@ -10,8 +10,6 @@ public class LevelControl
 	{
 		for(Item i: grid.getItems())
 		{
-			i.step();
-			
 			if(i instanceof Materiel)
 			{
 				Materiel mat = (Materiel)i;
