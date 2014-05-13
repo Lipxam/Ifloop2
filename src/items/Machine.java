@@ -9,7 +9,7 @@ public abstract class Machine extends Item
 	// TODO make input/output
 	
 	//list of accpeted inputs and outputs
-	List<Class<? extends Materiel>> inputs, outputs;
+	protected List<Class<? extends Materiel>> inputs, outputs;
 	
 	Direction orientation;
 	
