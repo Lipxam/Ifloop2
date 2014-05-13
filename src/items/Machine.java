@@ -8,10 +8,17 @@ public abstract class Machine extends Item
 {
 	// TODO make input/output
 	
+<<<<<<< HEAD
 	//list of accpeted inputs and outputs
 	protected List<Class<? extends Materiel>> inputs, outputs;
 	
 	Direction orientation;
+=======
+		//list of accpeted inputs and outputs
+		protected List<Class<? extends Materiel>> inputs, outputs;
+		
+		Direction orientation;
+>>>>>>> FETCH_HEAD
 	
 	public Machine()
 	{
