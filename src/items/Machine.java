@@ -18,5 +18,8 @@ public abstract class Machine extends Item
 		outputs = new ArrayList<Class<? extends Materiel>>();
 	}
 	
+	public void step()
+	{}
+	
 	public abstract List<Materiel> step(List<Item> inputs);
 }
