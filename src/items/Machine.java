@@ -9,9 +9,13 @@ public abstract class Machine extends Item
 	// TODO make input/output
 	
 	//list of accpeted inputs and outputs
+<<<<<<< HEAD
 	private List<Class<? extends Materiel>> inputs;
 
 	List<Class<? extends Materiel>> outputs;
+=======
+	protected List<Class<? extends Materiel>> inputs, outputs;
+>>>>>>> FETCH_HEAD
 	
 	Direction orientation;
 	
