@@ -49,4 +49,10 @@ public class Kettle extends Machine
 		}
 		return result;
 	}
+	@Override
+	public void step()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }
