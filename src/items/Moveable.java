@@ -1,6 +1,6 @@
-package Interfaces;
+package items;
 
-import items.Direction;
+import data.Direction;
 
 public interface Moveable
 {

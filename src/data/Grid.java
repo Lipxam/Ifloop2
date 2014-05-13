@@ -1,5 +1,6 @@
-package items;
+package data;
 
+import items.Item;
 import java.util.*;
 
 public class Grid implements Iterable<Item>

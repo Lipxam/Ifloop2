@@ -1,6 +1,6 @@
 package items;
 
-import Interfaces.Moveable;
+import data.Direction;
 
 public abstract class Materiel extends Item implements Moveable
 {

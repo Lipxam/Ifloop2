@@ -2,6 +2,7 @@ package items;
 
 import java.util.ArrayList;
 import java.util.List;
+import data.Direction;
 
 public abstract class Machine extends Item
 {

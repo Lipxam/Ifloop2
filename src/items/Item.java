@@ -1,5 +1,7 @@
 package items;
 
+import data.Location;
+
 
 public abstract class Item 
 {

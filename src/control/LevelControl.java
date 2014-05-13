@@ -3,6 +3,8 @@ package control;
 import items.*;
 import java.util.List;
 import java.util.ListIterator;
+import data.Grid;
+import data.Location;
 
 public class LevelControl
 {	
@@ -13,14 +15,7 @@ public class LevelControl
 		for(Item i: grid.getItems())
 		{
 			Location loc = i.getLocation();
-			if(i instanceof Materiel)
-			{
-				Materiel mat = (Materiel)i;
-				
-				//TODO remove materiel if applicable
-				
-			}
-			else if(i instanceof Machine)
+			if(i instanceof Machine)
 			{
 				//TODO gather all materiels in i's location
 				List<Item> items = grid.getItemsAtLoc(loc);
@@ -33,6 +28,13 @@ public class LevelControl
 				
 				Machine mac = (Machine)i;
 				List<Materiel> outputs = mac.step(items);
+			}
+			else if(i instanceof Materiel)
+			{
+				Materiel mat = (Materiel)i;
+				
+				//TODO remove materiel if applicable
+				
 			}
 		}
 	}

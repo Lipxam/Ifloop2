@@ -1,4 +1,4 @@
-package Interfaces;
+package items;
 
 public interface Toggleable
 {

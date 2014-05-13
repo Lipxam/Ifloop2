@@ -1,4 +1,4 @@
-package items;
+package data;
 
 public class Direction
 {
