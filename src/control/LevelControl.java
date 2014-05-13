@@ -1,6 +1,8 @@
 package control;
 
 import items.*;
+import java.util.List;
+import java.util.ListIterator;
 
 public class LevelControl
 {	
@@ -10,6 +12,7 @@ public class LevelControl
 	{
 		for(Item i: grid.getItems())
 		{
+			Location loc = i.getLocation();
 			if(i instanceof Materiel)
 			{
 				Materiel mat = (Materiel)i;
@@ -20,8 +23,16 @@ public class LevelControl
 			else if(i instanceof Machine)
 			{
 				//TODO gather all materiels in i's location
-				//TODO step i with inputs
-				//TODO get outputs
+				List<Item> items = grid.getItemsAtLoc(loc);
+				ListIterator<Item> iterator = items.listIterator();
+				while(iterator.hasNext())
+				{
+					if(!(iterator.next() instanceof Materiel))
+						iterator.remove();
+				}
+				
+				Machine mac = (Machine)i;
+				List<Materiel> outputs = mac.step(items);
 			}
 		}
 	}
