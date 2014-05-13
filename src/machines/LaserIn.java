@@ -1,6 +1,6 @@
 package machines;
 
-public class Kettle
+public class LaserIn
 {
 
 }

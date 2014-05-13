@@ -9,15 +9,27 @@ public abstract class Machine extends Item
 	// TODO make input/output
 	
 	//list of accpeted inputs and outputs
-	List<Class<? extends Materiel>> inputs, outputs;
+	private List<Class<? extends Materiel>> inputs;
+
+	List<Class<? extends Materiel>> outputs;
 	
 	Direction orientation;
 	
 	public Machine()
 	{
-		inputs = new ArrayList<Class<? extends Materiel>>();
+		setInputs(new ArrayList<Class<? extends Materiel>>());
 		outputs = new ArrayList<Class<? extends Materiel>>();
 	}
 	
 	public abstract List<Materiel> step(List<Item> inputs);
+
+	public List<Class<? extends Materiel>> getInputs()
+	{
+		return inputs;
+	}
+
+	public void setInputs(List<Class<? extends Materiel>> inputs)
+	{
+		this.inputs = inputs;
+	}
 }
