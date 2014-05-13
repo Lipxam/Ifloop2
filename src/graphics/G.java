@@ -1,12 +1,18 @@
 package graphics;
 
+import items.Item;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+import control.LevelControl;
+
 public class G
 {
+	LevelControl controller = new LevelControl(); 
 	public G()
 	{
+		
 		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice device = env.getDefaultScreenDevice(); // gives access to whatever the graphics device is
 		GraphicsConfiguration gc = device.getDefaultConfiguration();

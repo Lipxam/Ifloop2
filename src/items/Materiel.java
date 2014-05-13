@@ -1,5 +1,7 @@
 package items;
 
+import Interfaces.Moveable;
+
 public abstract class Materiel extends Item implements Moveable
 {
 	//where this came from
