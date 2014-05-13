@@ -9,6 +9,11 @@ public abstract class Materiel extends Item implements Moveable
 	
 	Direction moveDirection;
 	
+	public Materiel(Direction d)
+	{
+		moveDirection = d;
+	}
+	
 	public boolean inMotion()
 	{
 		return moveDirection != null;
