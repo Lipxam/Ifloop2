@@ -38,3 +38,4 @@ public abstract class Machine extends Item
 		this.inputs = inputs;
 	}
 }
+ 
