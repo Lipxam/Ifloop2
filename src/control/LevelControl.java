@@ -43,7 +43,10 @@ public class LevelControl
 				for(Item x: grid.getItemsAtLoc(loc))
 				{
 					if(x instanceof Machine)
+					{
 						grid.removeItem(mat);
+						break;
+					}
 				}
 			}
 		}
