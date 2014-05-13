@@ -17,6 +17,7 @@ public class LevelControl
 				Materiel mat = (Materiel)i;
 				
 				//TODO remove materiel if applicable
+				
 			}
 			else if(i instanceof Machine)
 			{
