@@ -22,4 +22,28 @@ public abstract class Machine extends Item
 	{}
 	
 	public abstract List<Materiel> step(List<Item> inputs);
+	
+	public void addInputType(String type)
+	{
+		try
+		{
+			inputs.add((Class<? extends Materiel>)Class.forName(type));
+		} catch (ClassNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void addOutputType(String type)
+	{
+		try
+		{
+			outputs.add((Class<? extends Materiel>)Class.forName(type));
+		} catch (ClassNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

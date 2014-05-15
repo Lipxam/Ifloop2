@@ -1,10 +1,7 @@
 package graphics;
 
-import items.Item;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-
 import control.LevelControl;
 
 public class G

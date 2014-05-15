@@ -11,23 +11,8 @@ public class Kettle extends Machine
 {
 	public Kettle()
 	{
-		try
-		{
-			inputs.add((Class<? extends Materiel>)Class.forName("Electricity"));
-		} catch (ClassNotFoundException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try
-		{
-			outputs.add((Class<? extends Materiel>)Class.forName("Steam"));
-		} catch (ClassNotFoundException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		addInputType("Electricity");
+		addOutputType("Steam");
 	}
 	public List<Materiel> step(List<Item> inputs)
 	{
