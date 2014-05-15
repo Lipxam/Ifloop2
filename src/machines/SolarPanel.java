@@ -11,8 +11,8 @@ public class SolarPanel extends Machine
 {
 	public SolarPanel()
 	{
-		addInputType("Electricity");
-		addOutputType("Steam");
+		addInputType("Light");
+		addOutputType("Electricity");
 	}
 	public List<Materiel> step(List<Item> inputs)
 	{
