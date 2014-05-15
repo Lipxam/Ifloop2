@@ -3,41 +3,54 @@ package machines;
 import items.Item;
 import items.Machine;
 import items.Materiel;
+import items.Powered;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kettle extends Machine
+public class Kettle extends Machine implements Powered
 {
+	boolean active;
+	boolean setactive;
+	List<Materiel> result = new ArrayList<Materiel>();
+	
 	public Kettle()
 	{
 		addInputType("Electricity");
 		addOutputType("Steam");
 	}
 	public List<Materiel> step(List<Item> inputs)
-	{
-		List<Materiel> result = new ArrayList<Materiel>();
-		for(Class<? extends Materiel> o: outputs)
+	{		
+		if(isActive() == true)
 		{
-			try
+			for(Class<? extends Materiel> o: outputs)
 			{
-				result.add(o.newInstance());
-			} catch (InstantiationException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try
+				{
+					result.add(o.newInstance());
+				} catch (InstantiationException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalAccessException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		return result;
 	}
+	
 	@Override
-	public void step()
+	public void setActive(boolean a)
+	{
+		active = a;
+	}
+	@Override
+	public boolean isActive()
 	{
 		// TODO Auto-generated method stub
-		
+		return active;
 	}
 }
