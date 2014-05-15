@@ -36,4 +36,6 @@ public class G
 		window.setVisible(false);
 		window.setVisible(true);
 	}
+	
+	
 }

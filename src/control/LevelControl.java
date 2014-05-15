@@ -10,6 +10,13 @@ public class LevelControl
 {
 	Grid grid = new Grid();
 	
+	private int levelNum;
+	
+	public LevelControl(int n)
+	{
+		levelNum = n;
+	}
+	
 	public void step()
 	{
 		for(Machine i: grid.getMachines())
