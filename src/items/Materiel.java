@@ -30,6 +30,11 @@ public abstract class Materiel extends Item implements Moveable
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean passesThrough(Machine m)
+	{
+		return passesThrough.contains(m.getClass());
+	}
 
 	public boolean inMotion()
 	{

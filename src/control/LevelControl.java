@@ -37,9 +37,9 @@ public class LevelControl
 		{
 			Location loc = i.getLocation();
 			// TODO remove materiel if applicable
-			for(Item x: grid.getItemsAtLoc(loc))
+			for(Machine x: grid.getMachinesAtLoc(loc))
 			{
-				if(x instanceof Machine)
+				if(!i.passesThrough(x))
 				{
 					grid.removeItem(i);
 					break;

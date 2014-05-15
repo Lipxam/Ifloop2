@@ -66,4 +66,16 @@ public class Grid implements Iterable<Item>
 	{
 		return items.iterator();
 	}
+
+	public List<Machine> getMachinesAtLoc(Location loc)
+	{
+		List<Machine> result = new ArrayList<Machine>();
+		for(Item i: this)
+		{
+			if(i instanceof Machine && i.getLocation().equals(loc))
+				result.add((Machine)i);
+		}
+		
+		return result;
+	}
 }
