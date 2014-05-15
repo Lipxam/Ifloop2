@@ -16,4 +16,15 @@ public class Location
 	{
 		return null;
 	}
+	
+	public void move(Direction d)
+	{
+		switch(d.direction)
+		{
+			case Direction.DOWN: y--; break;
+			case Direction.UP: y++; break;
+			case Direction.LEFT: x--; break;
+			case Direction.RIGHT: x++; break;
+		}
+	}
 }
