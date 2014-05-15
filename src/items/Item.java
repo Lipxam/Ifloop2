@@ -6,7 +6,7 @@ import data.Location;
 public abstract class Item 
 {
 	int width, height;
-	Location loc;
+	protected Location loc;
 	
 	public abstract void step();
 
