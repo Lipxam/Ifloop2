@@ -1,6 +1,6 @@
 package items;
 
-public interface Toggleable
+public interface Powered
 {
 	void setActive(boolean a);
 	boolean isActive();
