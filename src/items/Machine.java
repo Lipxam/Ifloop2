@@ -12,6 +12,8 @@ public abstract class Machine extends Item
 	
 	Direction orientation;
 	
+	boolean userPlaceable = false;
+	
 	public Machine()
 	{
 		inputs1 = new ArrayList<Class<? extends Materiel>>();

@@ -5,32 +5,26 @@ import java.util.*;
 import data.Grid;
 import data.Location;
 
-public class LevelControl
+public class Level
 {
 	private Grid grid = new Grid();
 	List<Machine> toolbar = new ArrayList<Machine>();
 	
 	private int levelNum;
 	
-	public LevelControl(int n)
+	public Level(int n)
 	{
 		levelNum = n;
 	}
 	
-	public LevelControl()
-	{
-		this(0);
-	}
-	
-	public void setLevel(int n)
+	public void setNum(int n)
 	{
 		levelNum = n;
-		grid = loadLevel(n);
 	}
 	
-	public void nextLevel()
+	public int getNum()
 	{
-		setLevel(levelNum + 1);
+		return levelNum;
 	}
 	
 	public Grid getGrid()
@@ -38,10 +32,9 @@ public class LevelControl
 		return grid;
 	}
 	
-	public Grid loadLevel(int num)
+	public List<Machine> getToolbar()
 	{
-		// TODO load the starting grid from a dat file
-		return null;
+		return toolbar;
 	}
 	
 	public void step()

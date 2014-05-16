@@ -2,17 +2,17 @@ package graphics;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import control.LevelControl;
+import control.Level;
 import data.Grid;
 
 public class G
 {
-	LevelControl level = new LevelControl();
+	Level level = new Level();
 	ImageManager imageManager = new ImageManager();
 	
 	Window window;
 	
-	public G(LevelControl l)
+	public G(Level l)
 	{
 		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice device = env.getDefaultScreenDevice(); // gives access to whatever the graphics device is
@@ -28,26 +28,28 @@ public class G
 		window.createBufferStrategy(2);
 		BufferStrategy strat = window.getBufferStrategy();
 		
-		Graphics g = strat.getDrawGraphics();
-		if(!strat.contentsLost())
+		while(true)
 		{
-			try
+			Graphics g = strat.getDrawGraphics();
+			if(!strat.contentsLost())
 			{
-				while(true)
-				{	
-					g.fillRect((int)(Math.random() * (bounds.width + 100)) - 100, (int)(Math.random() * (bounds.height + 100)) - 100, (int)(Math.random() * 100), (int)(Math.random() * 100));
+				try
+				{
+					
+					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
+					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
+					(int) (Math.random() * 100));
 					
 					Thread.sleep(10);
 				}
+				
+				catch(InterruptedException ex)
+				{}
 			}
-			catch(InterruptedException ex)
-			{}
 		}
 		
-
 		strat.show();
 		g.dispose();
-		
 		
 		window.setVisible(false);
 		window.setVisible(true);
@@ -58,16 +60,16 @@ public class G
 		Grid gr = level.getGrid();
 		imageManager.loadImages(gr);
 		
-		//TODO draw background
-		//TODO draw materiels
-		//TODO draw machines
+		// TODO draw background
+		// TODO draw materiels
+		// TODO draw machines
 	}
 	
 	public Window getWindow()
 	{
 		return window;
 	}
-
+	
 	public void setWindow(Window window)
 	{
 		this.window = window;

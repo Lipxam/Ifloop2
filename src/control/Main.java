@@ -11,13 +11,13 @@ public class Main
 
 	}
 
-	LevelControl control;
+	Control control;
 	G graphics;
 	Window window;
 	
 	public Main()
 	{
-		control = new LevelControl();
+		control = new Control();
 		graphics = new G(control);
 		window = graphics.getWindow();
 		
