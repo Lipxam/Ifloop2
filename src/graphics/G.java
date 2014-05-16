@@ -26,33 +26,33 @@ public class G
 		
 		Rectangle bounds = window.getBounds();
 		window.createBufferStrategy(2);
-
-		window.setVisible(false);
-		window.setVisible(true);
 		
 		BufferStrategy strat = window.getBufferStrategy();
-		
 		Graphics g = strat.getDrawGraphics();
-		for(int i = 0 ; i < 10000; i++)
+		
+		try
 		{
-			if(!strat.contentsLost())
+			for(int i = 0; i < 100; i++)
 			{
-				try
+
+				//g = strat.getDrawGraphics();
+				if(!strat.contentsLost())
 				{
+					
 					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
 					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
 					(int) (Math.random() * 100));
 					
-					strat.show();
-					g.dispose();
 					
 					Thread.sleep(10);
 				}
-				
-				catch(InterruptedException ex)
-				{}
 			}
+
+			strat.show();
+			g.dispose();
 		}
+		catch(InterruptedException ex)
+		{}
 		
 		while(true)
 		{
