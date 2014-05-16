@@ -27,7 +27,7 @@ public class Kettle extends Machine implements Powered
 			{
 				if(b.isInstance(a))
 				{
-					
+					setActive(true);
 				}
 			}
 		}
