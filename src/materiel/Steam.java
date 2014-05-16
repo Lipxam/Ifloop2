@@ -1,6 +1,12 @@
 package materiel;
 
-public class Steam
-{
+import data.Direction;
+import items.Materiel;
 
+public class Steam extends Materiel
+{
+	public Steam()
+	{
+		super(new Direction(Direction.UP));
+	}
 }

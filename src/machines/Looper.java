@@ -7,7 +7,6 @@ import items.*;
 
 public class Looper extends Machine
 {
-
 	public Looper()
 	{
 		addInputType("Electricity");

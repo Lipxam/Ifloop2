@@ -33,6 +33,11 @@ public abstract class Materiel extends Item implements Moveable
 	
 	public boolean passesThrough(Machine m)
 	{
+		for(Class<? extends Machine> c: passesThrough)
+		{
+			if(true)//m is of type/subtype c
+				return true;
+		}
 		return passesThrough.contains(m.getClass());
 	}
 

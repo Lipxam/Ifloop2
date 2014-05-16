@@ -8,10 +8,8 @@ public class Electricity extends Materiel
 	public Electricity(Direction d)
 	{
 		super(d);
-	}
-
-	@Override
-	public void step()
-	{
+		
+		//passes through everything
+		addPassesThrough("Machine");
 	}
 }

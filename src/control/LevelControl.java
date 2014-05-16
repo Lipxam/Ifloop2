@@ -8,13 +8,40 @@ import data.Location;
 
 public class LevelControl
 {
-	Grid grid = new Grid();
+	private Grid grid = new Grid();
 	
 	private int levelNum;
 	
 	public LevelControl(int n)
 	{
 		levelNum = n;
+	}
+	
+	public LevelControl()
+	{
+		this(0);
+	}
+	
+	public void setLevel(int n)
+	{
+		levelNum = n;
+		grid = loadLevel(n);
+	}
+	
+	public void nextLevel()
+	{
+		setLevel(levelNum + 1);
+	}
+	
+	public Grid getGrid()
+	{
+		return grid;
+	}
+	
+	public Grid loadLevel(int num)
+	{
+		// TODO load the starting grid from a dat file
+		return null;
 	}
 	
 	public void step()

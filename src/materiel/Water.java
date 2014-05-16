@@ -1,15 +1,12 @@
 package materiel;
 
 import items.Materiel;
+import data.Direction;
 
 public class Water extends Materiel
 {
-
-	@Override
-	public void step()
+	public Water()
 	{
-		// TODO Auto-generated method stub
-		
+		super(new Direction(Direction.DOWN));
 	}
-
 }
