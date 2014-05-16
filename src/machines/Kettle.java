@@ -20,7 +20,8 @@ public class Kettle extends Machine implements Powered
 		addOutputType("Steam");
 	}
 	public List<Materiel> step(List<Item> inputs)
-	{		
+	{	
+		for(inputs)
 		if(isActive() == true)
 		{
 			for(Class<? extends Materiel> o: outputs)
