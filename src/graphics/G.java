@@ -7,7 +7,7 @@ import data.Grid;
 
 public class G
 {
-	Level level = new Level();
+	Level level;
 	ImageManager imageManager = new ImageManager();
 	
 	Window window;
@@ -28,17 +28,19 @@ public class G
 		window.createBufferStrategy(2);
 		BufferStrategy strat = window.getBufferStrategy();
 		
-		while(true)
+		Graphics g = strat.getDrawGraphics();
+		for(int i = 0 ; i < 10000; i++)
 		{
-			Graphics g = strat.getDrawGraphics();
 			if(!strat.contentsLost())
 			{
 				try
 				{
-					
 					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
 					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
 					(int) (Math.random() * 100));
+					
+					strat.show();
+					g.dispose();
 					
 					Thread.sleep(10);
 				}
@@ -48,8 +50,27 @@ public class G
 			}
 		}
 		
-		strat.show();
-		g.dispose();
+		while(true)
+		{
+			g = strat.getDrawGraphics();
+			if(!strat.contentsLost())
+			{
+				try
+				{
+					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
+					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
+					(int) (Math.random() * 100));
+					
+					strat.show();
+					g.dispose();
+					
+					Thread.sleep(10);
+				}
+				
+				catch(InterruptedException ex)
+				{}
+			}
+		}
 		
 		window.setVisible(false);
 		window.setVisible(true);
