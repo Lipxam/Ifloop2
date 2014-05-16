@@ -35,17 +35,19 @@ public class G
 			{
 				while(true)
 				{	
-					g.fillRect((int)(Math.random() * bounds.width), (int)(Math.random() * bounds.height), (int)(Math.random() * 10), (int)(Math.random() * 10));
+					g.fillRect((int)(Math.random() * (bounds.width + 100)) - 100, (int)(Math.random() * (bounds.height + 100)) - 100, (int)(Math.random() * 100), (int)(Math.random() * 100));
 					
 					Thread.sleep(10);
 				}
 			}
 			catch(InterruptedException ex)
 			{}
-			 
-			strat.show();
-			g.dispose();
 		}
+		
+
+		strat.show();
+		g.dispose();
+		
 		
 		window.setVisible(false);
 		window.setVisible(true);
@@ -73,6 +75,6 @@ public class G
 	
 	public static void main(String...args)
 	{
-		new G();
+		new G(null);
 	}
 }

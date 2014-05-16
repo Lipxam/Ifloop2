@@ -1,14 +1,14 @@
 package control;
 
 import items.*;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 import data.Grid;
 import data.Location;
 
 public class LevelControl
 {
 	private Grid grid = new Grid();
+	List<Machine> toolbar = new ArrayList<Machine>();
 	
 	private int levelNum;
 	
