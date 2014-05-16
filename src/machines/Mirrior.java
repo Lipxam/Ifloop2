@@ -9,6 +9,8 @@ import java.util.List;
 
 public class Mirrior extends Machine
 {
+	List<Materiel> result = new ArrayList<Materiel>();
+	
 	public Mirrior()
 	{
 		addInputType("Light");

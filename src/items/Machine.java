@@ -8,13 +8,13 @@ public abstract class Machine extends Item
 {
 	// TODO make input/output
 	// list of accpeted inputs and outputs
-	protected List<Class<? extends Materiel>> inputs, outputs;
+	protected List<Class<? extends Materiel>> inputs1, outputs;
 	
 	Direction orientation;
 	
 	public Machine()
 	{
-		inputs = new ArrayList<Class<? extends Materiel>>();
+		inputs1 = new ArrayList<Class<? extends Materiel>>();
 		outputs = new ArrayList<Class<? extends Materiel>>();
 	}
 	
@@ -27,7 +27,7 @@ public abstract class Machine extends Item
 	{
 		try
 		{
-			inputs.add((Class<? extends Materiel>)Class.forName(type));
+			inputs1.add((Class<? extends Materiel>)Class.forName(type));
 		} catch (ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block

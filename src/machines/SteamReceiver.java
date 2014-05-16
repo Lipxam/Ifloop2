@@ -6,9 +6,14 @@ import java.util.List;
 import items.Item;
 import items.Machine;
 import items.Materiel;
+import items.Powered;
 
-public class SteamReceiver extends Machine 
+public class SteamReceiver extends Machine implements Powered
 {
+	List<Materiel> result = new ArrayList<Materiel>();
+	boolean active; 
+	boolean setActive;
+	
 	public SteamReceiver()
 	{
 		addInputType("Steam");
@@ -16,8 +21,16 @@ public class SteamReceiver extends Machine
 	}
 	public List<Materiel> step(List<Item> inputs)
 	{
-		List<Materiel> result = new ArrayList<Materiel>();
-		for(Class<? extends Materiel> o: outputs)
+		for(Item a: inputs)
+		{
+			for(Class<? extends Materiel> b : inputs1)
+			{
+				if(b.isInstance(a))
+				{
+					setActive(true);
+				}
+			}
+		}		for(Class<? extends Materiel> o: outputs)
 		{
 			try
 			{
@@ -39,6 +52,17 @@ public class SteamReceiver extends Machine
 	{
 		// TODO Auto-generated method stub
 
+	}
+	public void setActive(boolean a)
+	{
+		active = a;
+	}
+	@Override
+	public boolean isActive()
+	{
+		// TODO Auto-generated method stub
+		return active;
+		
 	}
 }
 

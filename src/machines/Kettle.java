@@ -23,7 +23,7 @@ public class Kettle extends Machine implements Powered
 	{	
 		for(Item a: inputsObs)
 		{
-			for(Class<? extends Materiel> b : inputs)
+			for(Class<? extends Materiel> b : inputs1)
 			{
 				if(b.isInstance(a))
 				{
@@ -60,7 +60,6 @@ public class Kettle extends Machine implements Powered
 	@Override
 	public boolean isActive()
 	{
-		// TODO Auto-generated method stub
 		return active;
 	}
 }

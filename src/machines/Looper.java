@@ -5,8 +5,11 @@ import java.util.List;
 
 import items.*;
 
-public class Looper extends Machine
+public class Looper extends Machine implements Powered
 {
+	List<Materiel> result = new ArrayList<Materiel>();
+	boolean active; 
+	boolean setActive;
 	public Looper()
 	{
 		addInputType("Electricity");
@@ -14,8 +17,16 @@ public class Looper extends Machine
 	}
 	public List<Materiel> step(List<Item> inputs)
 	{
-		List<Materiel> result = new ArrayList<Materiel>();
-		for(Class<? extends Materiel> o: outputs)
+		for(Item a: inputs)
+		{
+			for(Class<? extends Materiel> b : inputs1)
+			{
+				if(b.isInstance(a))
+				{
+					setActive(true);
+				}
+			}
+		}		for(Class<? extends Materiel> o: outputs)
 		{
 			try
 			{
@@ -36,6 +47,17 @@ public class Looper extends Machine
 	public void step()
 	{
 		// TODO Auto-generated method stub
+		
+	}
+	public void setActive(boolean a)
+	{
+		active = a;
+	}
+	@Override
+	public boolean isActive()
+	{
+		// TODO Auto-generated method stub
+		return active;
 		
 	}
 
