@@ -4,6 +4,7 @@ import items.Machine;
 import items.Materiel;
 import items.Powered;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,5 +64,11 @@ public class LaserIn extends Machine implements Powered
 		// TODO Auto-generated method stub
 		return active;
 
+	}
+	@Override
+	public void draw(Graphics g)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }

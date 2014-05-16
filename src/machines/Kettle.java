@@ -5,6 +5,7 @@ import items.Machine;
 import items.Materiel;
 import items.Powered;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,5 +62,11 @@ public class Kettle extends Machine implements Powered
 	public boolean isActive()
 	{
 		return active;
+	}
+	@Override
+	public void draw(Graphics g)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }
