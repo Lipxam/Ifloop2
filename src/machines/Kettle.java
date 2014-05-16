@@ -19,13 +19,13 @@ public class Kettle extends Machine implements Powered
 		addInputType("Electricity");
 		addOutputType("Steam");
 	}
-	public List<Materiel> step(List<Item> inputs1)
+	public List<Materiel> step(List<Item> inputsObs)
 	{	
-		for(Item a: inputs1)
+		for(Item a: inputsObs)
 		{
 			for(Class<? extends Materiel> b : inputs)
 			{
-				if(a.getClass() )
+				if(b.isInstance(a))
 			}
 		}
 		if(isActive() == true)
