@@ -4,6 +4,7 @@ import items.Item;
 import items.Machine;
 import items.Materiel;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +39,12 @@ public class Mirrior extends Machine
 	}
 	@Override
 	public void step()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void draw(Graphics g)
 	{
 		// TODO Auto-generated method stub
 		

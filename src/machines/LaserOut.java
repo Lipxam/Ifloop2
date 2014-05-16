@@ -1,5 +1,6 @@
 package machines;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,4 +66,12 @@ public class LaserOut extends Machine implements Powered
 		return active;
 		
 	}
+	@Override
+	public void draw(Graphics g)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }
