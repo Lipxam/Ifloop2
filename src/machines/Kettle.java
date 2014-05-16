@@ -26,12 +26,9 @@ public class Kettle extends Machine implements Powered
 			for(Class<? extends Materiel> b : inputs)
 			{
 				if(b.isInstance(a))
-<<<<<<< HEAD
 				{
 					
 				}
-=======
->>>>>>> FETCH_HEAD
 			}
 		}
 		if(isActive() == true)
