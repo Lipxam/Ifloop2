@@ -26,6 +26,10 @@ public class G
 		
 		Rectangle bounds = window.getBounds();
 		window.createBufferStrategy(2);
+
+		window.setVisible(false);
+		window.setVisible(true);
+		
 		BufferStrategy strat = window.getBufferStrategy();
 		
 		Graphics g = strat.getDrawGraphics();
@@ -71,9 +75,6 @@ public class G
 				{}
 			}
 		}
-		
-		window.setVisible(false);
-		window.setVisible(true);
 	}
 	
 	private void drawLevel(Graphics g)
