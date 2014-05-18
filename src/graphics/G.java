@@ -2,6 +2,11 @@ package graphics;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import control.Level;
 import data.Grid;
 
@@ -12,13 +17,11 @@ public class G
 	
 	Window window;
 	
-	public G(Level l)
+	public G()
 	{
 		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice device = env.getDefaultScreenDevice(); // gives access to whatever the graphics device is
 		GraphicsConfiguration gc = device.getDefaultConfiguration();
-		
-		level = l;
 		
 		window = new Window(null, gc);
 		window.setIgnoreRepaint(true);
@@ -32,24 +35,52 @@ public class G
 		
 		try
 		{
-			for(int i = 0; i < 100; i++)
+			Image splashpng = ImageIO.read(new File("img/splash_text.png"));
+			int imgW = (int) (640 * 1.8), imgH = (int) (400 * 2);
+			
+			g.setColor(Color.WHITE);
+			g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+			g.setColor(Color.BLACK);
+			for(int i = 0; i < 200; i++)
 			{
-
-				//g = strat.getDrawGraphics();
 				if(!strat.contentsLost())
 				{
+					int rectWidth = (int) (Math.random() * 50) + 20, rectHeight = (int) (Math.random() * 50) + 20;
+					Color c = new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
+					(int) (Math.random() * 256));
+					for(int j = 0; j < i / 25; j++)
+					{
+						c = c.darker();
+						rectWidth += 20;
+						rectHeight += 20;
+					}
+					g.setColor(c);
 					
-					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
-					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
-					(int) (Math.random() * 100));
+					for(int j = 0; j < 3; j++)
+						g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
+						(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
 					
+					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
+					null);
 					
-					Thread.sleep(10);
+					Thread.sleep(0);
 				}
 			}
-
+			for(int i = 0; i < 100; i++)
+			{
+				g.setColor(new Color(0, 0, 0, i));
+				g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+				g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
+				null);
+			}
+			
 			strat.show();
 			g.dispose();
+		}
+		catch(IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		catch(InterruptedException ex)
 		{}
@@ -61,9 +92,6 @@ public class G
 			{
 				try
 				{
-					g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
-					(int) (Math.random() * (bounds.height + 100)) - 100, (int) (Math.random() * 100),
-					(int) (Math.random() * 100));
 					
 					strat.show();
 					g.dispose();
@@ -75,6 +103,11 @@ public class G
 				{}
 			}
 		}
+	}
+	
+	public void setLevel(Level l)
+	{
+		level = l;
 	}
 	
 	private void drawLevel(Graphics g)

@@ -3,40 +3,36 @@ package machines;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-
 import items.*;
 
 public class Looper extends Machine implements Powered
 {
-	List<Materiel> result = new ArrayList<Materiel>();
-	boolean active; 
+	boolean active;
 	boolean setActive;
+	
 	public Looper()
 	{
 		addInputType("Electricity");
 		addOutputType("Electricity");
 	}
+	
 	public List<Materiel> step(List<Item> inputs)
 	{
-		for(Item a: inputs)
-		{
-			for(Class<? extends Materiel> b : inputs1)
-			{
-				if(b.isInstance(a))
-				{
-					setActive(true);
-				}
-			}
-		}		for(Class<? extends Materiel> o: outputs)
+		setActive(true);
+		
+		List<Materiel> result = new ArrayList<Materiel>();
+		for(Class<? extends Materiel> o: outputs)
 		{
 			try
 			{
 				result.add(o.newInstance());
-			} catch (InstantiationException e)
+			}
+			catch(InstantiationException e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (IllegalAccessException e)
+			}
+			catch(IllegalAccessException e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -44,16 +40,19 @@ public class Looper extends Machine implements Powered
 		}
 		return result;
 	}
+	
 	@Override
 	public void step()
 	{
 		// TODO Auto-generated method stub
 		
 	}
+	
 	public void setActive(boolean a)
 	{
 		active = a;
 	}
+	
 	@Override
 	public boolean isActive()
 	{
@@ -61,11 +60,12 @@ public class Looper extends Machine implements Powered
 		return active;
 		
 	}
+	
 	@Override
 	public void draw(Graphics g)
 	{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

@@ -17,8 +17,8 @@ public class Main
 	
 	public Main()
 	{
-		control = new Control();
-		graphics = new G(control);
+		graphics = new G();
+		control = new Control(graphics);
 		window = graphics.getWindow();
 		
 		
