@@ -22,20 +22,11 @@ public class G
 		GraphicsDevice device = env.getDefaultScreenDevice(); // gives access to whatever the graphics device is
 		GraphicsConfiguration gc = device.getDefaultConfiguration();
 		
-		DisplayMode[] modes = device.getDisplayModes();
-		DisplayMode good = null;
-		for(DisplayMode d: modes)
-			if(d.getWidth() == 1280 && d.getBitDepth() == 32)
-			{
-				good = d;
-				break;
-			}
-		
 		window = new JFrame();
 		window.setIgnoreRepaint(true);
 		window.setUndecorated(true);
 		device.setFullScreenWindow(window);
-		device.setDisplayMode(good);
+		device.setDisplayMode(device.getDisplayMode());
 		
 		Rectangle bounds = window.getBounds();
 		window.createBufferStrategy(2);
