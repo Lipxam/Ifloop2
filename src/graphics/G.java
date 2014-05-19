@@ -63,7 +63,7 @@ public class G
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
 					
-					Thread.sleep(1);
+					Thread.sleep(10);
 				}
 			}
 			for(int i = 0; i < 100; i++)
