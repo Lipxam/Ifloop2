@@ -60,8 +60,10 @@ public class G
 						g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
 						(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
 					
+					long start = System.currentTimeMillis();
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
+					System.out.print(System.currentTimeMillis() - start);
 					
 					Thread.sleep(1);
 				}
