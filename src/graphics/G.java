@@ -63,7 +63,7 @@ public class G
 					long start = System.currentTimeMillis();
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
-					System.out.print(System.currentTimeMillis() - start);
+					System.out.println(System.currentTimeMillis() - start);
 					
 					Thread.sleep(10);
 				}
