@@ -72,4 +72,3 @@ public class SteamReceiver extends Machine implements Powered
 		
 	}
 }
-
