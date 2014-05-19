@@ -63,15 +63,19 @@ public class G
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
 					
-					Thread.sleep(0);
+					Thread.sleep(1);
 				}
 			}
 			for(int i = 0; i < 100; i++)
 			{
+				g = strat.getDrawGraphics();
+
 				g.setColor(new Color(0, 0, 0, i));
 				g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 				g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 				null);
+				strat.show();
+				g.dispose();
 			}
 			
 			strat.show();
