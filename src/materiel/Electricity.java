@@ -1,15 +1,15 @@
 package materiel;
 
-import java.awt.Graphics;
-
 import items.Materiel;
+import java.awt.Graphics;
 import data.Direction;
+import data.Location;
 
 public class Electricity extends Materiel
 {
-	public Electricity(Direction d)
+	public Electricity(Direction d, Location l)
 	{
-		super(d);
+		super(d, l);
 		
 		//passes through everything
 		addPassesThrough("Machine");

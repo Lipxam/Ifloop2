@@ -6,8 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import control.Level;
 import data.Grid;
+import data.Level;
 
 public class G
 {
@@ -61,10 +61,8 @@ public class G
 						g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
 						(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
 					
-					long start = System.currentTimeMillis();
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
-					System.out.println(System.currentTimeMillis() - start);
 					
 					Thread.sleep(10);
 				}
