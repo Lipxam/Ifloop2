@@ -1,5 +1,6 @@
 package graphics;
 
+import items.Item;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.File;
@@ -117,16 +118,17 @@ public class G
 	public void setLevel(Level l)
 	{
 		level = l;
+		imageManager.loadImages(level);
 	}
 	
 	private void drawLevel(Graphics g)
 	{
-		Grid gr = level.getGrid();
-		imageManager.loadImages(gr);
 		
 		// TODO draw background
-		// TODO draw materiels
-		// TODO draw machines
+		for(Item i: level.getItems())
+		{
+			i.draw(g);
+		}
 	}
 	
 	public Window getWindow()

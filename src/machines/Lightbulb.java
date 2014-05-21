@@ -1,13 +1,10 @@
 package machines;
 
-import items.Item;
-import items.Machine;
-import items.Materiel;
-import items.Powered;
-
+import items.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
+import data.Location;
 
 public class Lightbulb extends Machine implements Powered
 {
@@ -15,8 +12,9 @@ public class Lightbulb extends Machine implements Powered
 	boolean active; 
 	boolean setActive;
 	
-	public Lightbulb()
+	public Lightbulb(Location loc)
 	{
+		super(loc);
 		addInputType("Electricity");
 		addOutputType("Light");
 	}

@@ -32,7 +32,7 @@ public class ElectricityControl
 					{
 						if(mac instanceof Wire)
 						{
-							level.addItem(new Electricity(e.getLocation().directionTowards(loc), loc));
+							level.addItem(new Electricity(loc, e.getLocation().directionTowards(loc)));
 						}
 					}
 				}

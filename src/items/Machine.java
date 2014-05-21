@@ -3,6 +3,7 @@ package items;
 import java.util.ArrayList;
 import java.util.List;
 import data.Direction;
+import data.Location;
 
 public abstract class Machine extends Item
 {
@@ -14,8 +15,9 @@ public abstract class Machine extends Item
 	
 	boolean userPlaceable = false;
 	
-	public Machine()
+	public Machine(Location loc)
 	{
+		super(loc);
 		inputs1 = new ArrayList<Class<? extends Materiel>>();
 		outputs = new ArrayList<Class<? extends Materiel>>();
 	}
