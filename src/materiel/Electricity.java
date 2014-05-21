@@ -7,9 +7,9 @@ import data.Location;
 
 public class Electricity extends Materiel
 {
-	public Electricity(Direction d, Location l)
+	public Electricity(Location l, Direction d)
 	{
-		super(d, l);
+		super(l, d);
 		
 		//passes through everything
 		addPassesThrough("Machine");

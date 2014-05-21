@@ -1,15 +1,15 @@
 package materiel;
 
-import java.awt.Graphics;
-
-import data.Direction;
 import items.Materiel;
+import java.awt.Graphics;
+import data.Direction;
+import data.Location;
 
 public class Steam extends Materiel
 {
-	public Steam()
+	public Steam(Location loc)
 	{
-		super(new Direction(Direction.UP));
+		super(loc, new Direction(Direction.UP));
 	}
 
 	@Override

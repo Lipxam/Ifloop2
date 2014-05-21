@@ -1,19 +1,18 @@
 package machines;
 
-import items.Item;
-import items.Machine;
-import items.Materiel;
-
+import items.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
+import data.Location;
 
 public class Mirrior extends Machine
 {
 	List<Materiel> result = new ArrayList<Materiel>();
 	
-	public Mirrior()
+	public Mirrior(Location loc)
 	{
+		super(loc);
 		addInputType("Light");
 		addOutputType("Light");
 	}

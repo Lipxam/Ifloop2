@@ -3,13 +3,14 @@ package materiel;
 import java.awt.Graphics;
 
 import data.Direction;
+import data.Location;
 import items.Materiel;
 
 public class Laser extends Materiel
 {
-	public Laser(Direction d)
+	public Laser(Location l, Direction d)
 	{
-		super(d);
+		super(l, d);
 	}
 
 	@Override

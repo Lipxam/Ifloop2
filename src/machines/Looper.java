@@ -1,17 +1,19 @@
 package machines;
 
+import items.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-import items.*;
+import data.Location;
 
 public class Looper extends Machine implements Powered
 {
 	boolean active;
 	boolean setActive;
 	
-	public Looper()
+	public Looper(Location loc)
 	{
+		super(loc);
 		addInputType("Electricity");
 		addOutputType("Electricity");
 	}

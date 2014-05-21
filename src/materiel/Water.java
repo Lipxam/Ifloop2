@@ -1,15 +1,15 @@
 package materiel;
 
-import java.awt.Graphics;
-
 import items.Materiel;
+import java.awt.Graphics;
 import data.Direction;
+import data.Location;
 
 public class Water extends Materiel
 {
-	public Water()
+	public Water(Location loc)
 	{
-		super(new Direction(Direction.DOWN));
+		super(loc, new Direction(Direction.DOWN));
 	}
 
 	@Override

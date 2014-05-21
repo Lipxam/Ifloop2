@@ -1,13 +1,10 @@
 package machines;
 
+import items.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-
-import items.Item;
-import items.Machine;
-import items.Materiel;
-import items.Powered;
+import data.Location;
 
 public class LaserOut extends Machine implements Powered
 {
@@ -15,8 +12,9 @@ public class LaserOut extends Machine implements Powered
 	boolean active; 
 	boolean setActive;
 	
-	public LaserOut()
+	public LaserOut(Location loc)
 	{
+		super(loc);
 		addInputType("Electricity");
 		addOutputType("Laser");
 	}

@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.util.HashMap;
 import java.util.List;
 import data.Grid;
+import data.Level;
 
 public class ImageManager
 {
@@ -24,9 +25,13 @@ public class ImageManager
 		List<Image> imgList = map.get(type);
 	}
 	
-	public void loadImages(Grid g)
+	public void loadImages(Level l)
 	{
-		for(Item i: g.getItems())
+		for(Item i: l.getItems())
+		{
+			loadImages(i.getClass());
+		}
+		for(Item i: l.getToolbar())
 		{
 			loadImages(i.getClass());
 		}

@@ -13,16 +13,16 @@ public abstract class Materiel extends Item implements Moveable
 	Machine parent;
 	Direction moveDirection;
 	
-	public Materiel(Direction d)
+	public Materiel(Location loc)
 	{
-		moveDirection = d;
-		
-		addPassesThrough("Wire");
+		this(loc, new Direction(-1));
 	}
 	
-	public Materiel(Direction d, Location l)
+	public Materiel(Location l, Direction d)
 	{
 		super(l);
+		addPassesThrough("Wire");
+		moveDirection = d;
 	}
 
 	public void addPassesThrough(String string)
