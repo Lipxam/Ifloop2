@@ -2,11 +2,9 @@ package control;
 
 import items.Machine;
 import items.Materiel;
-import java.util.List;
 import machines.Wire;
 import materiel.Electricity;
 import data.Level;
-import data.Location;
 
 public class ElectricityControl
 {	
@@ -25,16 +23,16 @@ public class ElectricityControl
 			{
 				Electricity e = (Electricity)m;
 				
-				for(Location loc: e.getLocation().getAdjacentLocs())
+				boolean keep = false;
+				for(Machine mac: level.getMachinesAtLoc(e.getLocation()))
 				{
-					List<Machine> machines = level.getMachinesAtLoc(loc);
-					for(Machine mac: machines)
-					{
-						if(mac instanceof Wire)
-						{
-							level.addItem(new Electricity(loc, e.getLocation().directionTowards(loc)));
-						}
-					}
+					if(mac instanceof Wire)
+						keep = true;
+				}
+				
+				if(!keep)
+				{
+					level.removeItem(e);
 				}
 			}
 		}
