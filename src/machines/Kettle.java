@@ -3,6 +3,7 @@ package machines;
 import items.*;
 
 import java.awt.Graphics;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,14 +45,10 @@ public class Kettle extends Machine implements Powered
 			{
 				try
 				{
-					Constructor conc = null;
-					for(Constructor c: o.getConstructors())
+					for(Class<? extends Materiel> a : outputs)
 					{
-						if(//this is the right constructor)
-								conc = c;
-					}
-					
-					result.add(c.newInstance(this.loc));
+					Constructor c = a.getDeclaredConstructor(Class.forName("Direction), Class.forName("Location))
+					result.add((Materiel) conc.newInstance(this.loc));
 					
 				} catch (InstantiationException e)
 				{
