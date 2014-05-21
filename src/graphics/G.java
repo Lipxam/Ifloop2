@@ -4,18 +4,17 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import control.Level;
+import javax.swing.JFrame;
 import data.Grid;
+import data.Level;
 
 public class G
 {
 	Level level;
 	ImageManager imageManager = new ImageManager();
 	
-	Window window;
+	JFrame window;
 	
 	public G()
 	{
@@ -23,9 +22,11 @@ public class G
 		GraphicsDevice device = env.getDefaultScreenDevice(); // gives access to whatever the graphics device is
 		GraphicsConfiguration gc = device.getDefaultConfiguration();
 		
-		window = new Window(null, gc);
+		window = new JFrame();
 		window.setIgnoreRepaint(true);
+		window.setUndecorated(true);
 		device.setFullScreenWindow(window);
+		device.setDisplayMode(device.getDisplayMode());
 		
 		Rectangle bounds = window.getBounds();
 		window.createBufferStrategy(2);
@@ -60,10 +61,12 @@ public class G
 						g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
 						(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
 					
-					long start = System.currentTimeMillis();
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
+<<<<<<< HEAD
 					System.out.println(System.currentTimeMillis() - start);
+=======
+>>>>>>> FETCH_HEAD
 					
 					Thread.sleep(10);
 				}
@@ -131,7 +134,7 @@ public class G
 		return window;
 	}
 	
-	public void setWindow(Window window)
+	public void setWindow(JFrame window)
 	{
 		this.window = window;
 	}

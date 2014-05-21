@@ -3,6 +3,7 @@ package items;
 import java.util.ArrayList;
 import java.util.List;
 import data.Direction;
+import data.Location;
 
 public abstract class Materiel extends Item implements Moveable
 {
@@ -19,6 +20,11 @@ public abstract class Materiel extends Item implements Moveable
 		addPassesThrough("Wire");
 	}
 	
+	public Materiel(Direction d, Location l)
+	{
+		super(l);
+	}
+
 	public void addPassesThrough(String string)
 	{
 		try

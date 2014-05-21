@@ -1,5 +1,6 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Location
@@ -14,7 +15,20 @@ public class Location
 	
 	public List<Location> getAdjacentLocs()
 	{
-		return null;
+		List<Location> result = new ArrayList<Location>();
+		for(int x1 = x - 1; x1 <= x + 1; x1++)
+		{
+			for(int y1 = y - 1; y <= y + 1; y++)
+				if(x1 != x && y1 != y)
+					result.add(new Location(x1, y1));
+		}
+		return result;
+	}
+	
+	public Direction directionTowards(Location other)
+	{
+		//TODO
+		return new Direction(-1);
 	}
 	
 	public void move(Direction d)
