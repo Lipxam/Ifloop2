@@ -1,13 +1,21 @@
 package machines;
 
 import items.*;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
+
+import materiel.Water;
+import data.Direction;
 import data.Location;
 
 public class Kettle extends Machine implements Powered
 {
+	Direction a = new Direction(1);
+	Direction b = new Direction(2);
+	Direction c = new Direction(3);
+	Direction d = new Direction(4);
 	boolean active;
 	boolean setactive;
 	List<Materiel> result = new ArrayList<Materiel>();
@@ -36,7 +44,15 @@ public class Kettle extends Machine implements Powered
 			{
 				try
 				{
-					result.add(o.newInstance());
+					Constructor conc = null;
+					for(Constructor c: o.getConstructors())
+					{
+						if(//this is the right constructor)
+								conc = c;
+					}
+					
+					result.add(c.newInstance(this.loc));
+					
 				} catch (InstantiationException e)
 				{
 					// TODO Auto-generated catch block
