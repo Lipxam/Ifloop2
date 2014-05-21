@@ -8,7 +8,7 @@ import graphics.G;
 
 public class Control
 {	
-	Level currentLevel;
+	private Level currentLevel;
 	ElectricityControl eControl;
 	G graphics;
 	
@@ -22,6 +22,12 @@ public class Control
 	{
 		//TODO load n from dat file
 		//currentLevel = *loaded level*
+	}
+	
+	public void setLevel(Level l)
+	{
+		currentLevel = l;
+		
 	}
 	
 	public void nextLevel()

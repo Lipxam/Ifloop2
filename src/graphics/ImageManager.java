@@ -2,9 +2,10 @@ package graphics;
 
 import items.Item;
 import java.awt.Image;
-import java.util.HashMap;
-import java.util.List;
-import data.Grid;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import javax.imageio.ImageIO;
 import data.Level;
 
 public class ImageManager
@@ -23,6 +24,43 @@ public class ImageManager
 		
 		//TODO load all the images associated with this class into the map
 		List<Image> imgList = map.get(type);
+		
+		File dir = new File("img");
+		for(File f: listAllFiles(dir))
+		{
+			//this file is of type type
+			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
+			{
+				try
+				{
+					imgList.add(ImageIO.read(f));
+				}
+				catch(IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		map.put(type, imgList);
+	}
+	
+	private List<File> listAllFiles(File dir)
+	{
+		List<File> result = new ArrayList<File>();
+		if(dir.isDirectory())
+		{
+			for(File f: dir.listFiles())
+			{
+				if(f.isFile())
+					result.add(f);
+				else if(f.isDirectory())
+					result.addAll(listAllFiles(f));
+			}
+		}
+		
+		return result;
 	}
 	
 	public void loadImages(Level l)

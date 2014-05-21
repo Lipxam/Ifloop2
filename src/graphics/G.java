@@ -64,10 +64,6 @@ public class G
 					
 					g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20, imgH,
 					null);
-<<<<<<< HEAD
-					System.out.println(System.currentTimeMillis() - start);
-=======
->>>>>>> FETCH_HEAD
 					
 					Thread.sleep(10);
 				}
