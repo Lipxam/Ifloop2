@@ -1,9 +1,12 @@
 package machines;
 
 import items.*;
+
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
+
 import data.Location;
 
 public class Wire extends Machine implements Powered
@@ -64,7 +67,7 @@ public class Wire extends Machine implements Powered
 		
 	}
 	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		
