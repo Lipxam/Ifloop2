@@ -1,5 +1,6 @@
 package items;
 
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 import data.Direction;
@@ -31,8 +32,10 @@ public abstract class Machine extends Item
 	{
 		try
 		{
-			inputs1.add((Class<? extends Materiel>)Class.forName(type));
-		} catch (ClassNotFoundException e)
+			
+			inputs1.add((Class<? extends Materiel>) Class.forName(type));
+		}
+		catch(ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,8 +46,9 @@ public abstract class Machine extends Item
 	{
 		try
 		{
-			outputs.add((Class<? extends Materiel>)Class.forName(type));
-		} catch (ClassNotFoundException e)
+			outputs.add((Class<? extends Materiel>) Class.forName(type));
+		}
+		catch(ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();

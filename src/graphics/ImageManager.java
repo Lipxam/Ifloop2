@@ -23,7 +23,7 @@ public class ImageManager
 			return;
 		
 		//TODO load all the images associated with this class into the map
-		List<Image> imgList = map.get(type);
+		List<Image> imgList = new ArrayList<Image>();
 		
 		File dir = new File("img");
 		for(File f: listAllFiles(dir))

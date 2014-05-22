@@ -48,7 +48,7 @@ public class G
 					g.setColor(Color.WHITE);
 					g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 					g.setColor(Color.BLACK);
-					for(int i = 0; i < 200; i++)
+					/*for(int i = 0; i < 200; i++)
 					{
 						if(!strat.contentsLost())
 						{
@@ -83,26 +83,17 @@ public class G
 						imgH, null);
 						strat.show();
 						g.dispose();
-					}
+					}*/
 					
 					strat.show();
 					g.dispose();
-				}
-				catch(IOException e)
-				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				catch(InterruptedException ex)
-				{}
 				
-				while(true)
-				{
-					g = strat.getDrawGraphics();
-					if(!strat.contentsLost())
+					while(true)
 					{
-						try
+						g = strat.getDrawGraphics();
+						if(!strat.contentsLost())
 						{
+							drawLevel(g);
 							
 							strat.show();
 							g.dispose();
@@ -110,9 +101,13 @@ public class G
 							Thread.sleep(10);
 						}
 						
-						catch(InterruptedException ex)
-						{}
 					}
+				}
+				
+				catch(Exception ex)
+				{
+					ex.printStackTrace();
+					System.exit(0);
 				}
 			}
 		}).start();
@@ -131,6 +126,7 @@ public class G
 	
 	private void drawLevel(Graphics g)
 	{
+		System.out.println("Drawing level");
 		
 		// TODO draw background
 		
@@ -163,10 +159,5 @@ public class G
 	public void setWindow(JFrame window)
 	{
 		this.window = window;
-	}
-	
-	public static void main(String...args)
-	{
-		new G();
 	}
 }

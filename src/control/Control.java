@@ -28,6 +28,7 @@ public class Control
 	{
 		currentLevel = l;
 		graphics.setLevel(l);
+		eControl.level = l;
 	}
 	
 	public void nextLevel()

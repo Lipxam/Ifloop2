@@ -3,8 +3,10 @@ package machines;
 import items.*;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import data.Direction;
 import data.Location;
 
 public class Looper extends Machine implements Powered
@@ -15,8 +17,8 @@ public class Looper extends Machine implements Powered
 	public Looper(Location loc)
 	{
 		super(loc);
-		addInputType("Electricity");
-		addOutputType("Electricity");
+		addInputType("materiel.Electricity");
+		addOutputType("materiel.Electricity");
 	}
 	
 	public List<Materiel> step(List<Item> inputs)
@@ -28,14 +30,14 @@ public class Looper extends Machine implements Powered
 		{
 			try
 			{
-				result.add(o.newInstance());
+				for(Class<? extends Materiel> a: outputs)
+				{
+					Constructor c = a.getDeclaredConstructor(Class.forName("data.Location"), Class.forName("data.Direction"));
+					result.add((Materiel)(c.newInstance(new Location(loc.getX(), loc.getY() - 1), new Direction(Direction.UP))));
+				}
+				
 			}
-			catch(InstantiationException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			catch(IllegalAccessException e)
+			catch(Exception e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();

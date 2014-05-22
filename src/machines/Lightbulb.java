@@ -3,8 +3,10 @@ package machines;
 import items.*;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import data.Direction;
 import data.Location;
 
 public class Lightbulb extends Machine implements Powered
@@ -16,8 +18,8 @@ public class Lightbulb extends Machine implements Powered
 	public Lightbulb(Location loc)
 	{
 		super(loc);
-		addInputType("Electricity");
-		addOutputType("Light");
+		addInputType("materiel.Electricity");
+		addOutputType("materiel.Light");
 	}
 	public List<Materiel> step(List<Item> inputs)
 	{
@@ -36,12 +38,16 @@ public class Lightbulb extends Machine implements Powered
 		{
 			try
 			{
-				result.add(o.newInstance());
-			} catch (InstantiationException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e)
+				for(Class<? extends Materiel> a: outputs)
+				{
+					Constructor c = a.getDeclaredConstructor(Class.forName("data.Location"), Class.forName("data.Direction"));
+					
+					for(int i = 0; i < 4; i++)
+						result.add((Materiel)(c.newInstance(new Location(loc.getX(), loc.getY() - 1), new Direction(i))));
+				}
+				
+			}
+			catch(Exception e)
 			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
