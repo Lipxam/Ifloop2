@@ -19,6 +19,6 @@ public class Electricity extends Materiel
 	{
 		// TODO Auto-generated method stub
 		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
-		g.drawImage(img, rect.x, rect.y, rect.width, rect.height, null);
+		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
 	}
 }

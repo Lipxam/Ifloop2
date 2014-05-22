@@ -11,9 +11,9 @@ public class Main
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
-
+		
 	}
-
+	
 	Control control;
 	G graphics;
 	Window window;
@@ -26,12 +26,22 @@ public class Main
 		
 		control.setLevel(level0());
 		
-		//main loop
-		while(true)
+		// main loop
+		try
 		{
-			//get input
-			//step program
-			//redraw
+			while(true)
+			{
+				// get input
+				// step program
+				control.step();
+				// redraw
+				
+				Thread.sleep(30);
+			}
+		}
+		catch(InterruptedException ex)
+		{	
+			
 		}
 	}
 	

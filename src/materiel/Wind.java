@@ -1,6 +1,7 @@
 package materiel;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import items.Materiel;
 import data.Direction;
 import data.Location;
@@ -12,8 +13,7 @@ public class Wind extends Materiel
 		super(loc, d);
 	}
 
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		

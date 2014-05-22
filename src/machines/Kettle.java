@@ -3,6 +3,7 @@ package machines;
 import items.*;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -74,8 +75,7 @@ public class Kettle extends Machine implements Powered
 	{
 		return active;
 	}
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		

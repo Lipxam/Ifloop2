@@ -2,6 +2,7 @@ package materiel;
 
 import items.Materiel;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import data.Direction;
 import data.Location;
 
@@ -12,8 +13,7 @@ public class Steam extends Materiel
 		super(loc, new Direction(Direction.UP));
 	}
 
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		

@@ -2,6 +2,7 @@ package machines;
 
 import items.*;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 import data.Location;
@@ -65,10 +66,9 @@ public class Lightbulb extends Machine implements Powered
 		return active;
 		
 	}
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
-		// TODO Auto-generated method stub
-		
+		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
+		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
 	}
 }

@@ -6,7 +6,7 @@ import data.Location;
 
 public abstract class Item 
 {
-	public static java.util.List<Image> imgs;
+	public java.util.List<Image> imgs;
 	
 	int width, height;
 	protected Location loc;

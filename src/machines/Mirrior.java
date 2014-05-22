@@ -2,6 +2,7 @@ package machines;
 
 import items.*;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 import data.Location;
@@ -42,8 +43,7 @@ public class Mirrior extends Machine
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		

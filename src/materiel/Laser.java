@@ -1,6 +1,7 @@
 package materiel;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 import data.Direction;
 import data.Location;
@@ -13,8 +14,7 @@ public class Laser extends Materiel
 		super(l, d);
 	}
 
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		
