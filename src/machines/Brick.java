@@ -1,9 +1,10 @@
 package machines;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.List;
-import data.Location;
 
+import data.Location;
 import items.*;
 
 public class Brick extends Machine
