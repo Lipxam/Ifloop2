@@ -22,7 +22,7 @@ public class Brick extends Machine
 	}
 
 	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
 		

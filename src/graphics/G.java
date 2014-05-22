@@ -1,13 +1,14 @@
 package graphics;
 
-import items.Item;
+import items.Machine;
+import items.Materiel;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import data.Grid;
+import machines.Wire;
 import data.Level;
 
 public class G
@@ -16,6 +17,7 @@ public class G
 	ImageManager imageManager = new ImageManager();
 	
 	JFrame window;
+	Rectangle bounds;
 	
 	public G()
 	{
@@ -29,7 +31,7 @@ public class G
 		device.setFullScreenWindow(window);
 		device.setDisplayMode(device.getDisplayMode());
 		
-		Rectangle bounds = window.getBounds();
+		bounds = window.getBounds();
 		window.createBufferStrategy(2);
 		
 		BufferStrategy strat = window.getBufferStrategy();
@@ -121,9 +123,25 @@ public class G
 	{
 		
 		// TODO draw background
-		for(Item i: level.getItems())
+		
+		//draw wires
+		for(Machine i: level.getMachines())
 		{
-			i.draw(g);
+			if(i instanceof Wire)
+				i.draw(g, bounds);
+		}
+		
+		//draw materiels
+		for(Materiel i: level.getMateriels())
+		{
+			i.draw(g, bounds);
+		}
+		
+		//draw machines
+		for(Machine i: level.getMachines())
+		{
+			if(!(i instanceof Wire))
+				i.draw(g, bounds);
 		}
 	}
 	
