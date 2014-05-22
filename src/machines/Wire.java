@@ -1,10 +1,12 @@
 package machines;
 
 import items.*;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
+
 import data.Location;
 
 public class Wire extends Machine implements Powered
@@ -64,6 +66,10 @@ public class Wire extends Machine implements Powered
 		return active;
 		
 	}
+<<<<<<< HEAD
+=======
+	@Override
+>>>>>>> FETCH_HEAD
 	public void draw(Graphics g, Rectangle bounds)
 	{
 		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
