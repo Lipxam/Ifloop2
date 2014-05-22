@@ -1,12 +1,13 @@
 package items;
 
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import data.Location;
 
 
 public abstract class Item 
 {
+	public static java.util.List<Image> imgs;
+	
 	int width, height;
 	protected Location loc;
 	
@@ -22,5 +23,14 @@ public abstract class Item
 	public Location getLocation()
 	{
 		return loc;
+	}
+	
+	//there are 20 rows and 15 columns
+	public static Rectangle mapGridtoPixels(Rectangle bounds, int row, int col)
+	{
+		int x = bounds.width / col;
+		int y = bounds.height / row;
+		
+		return new Rectangle(x, y, 40, 40);
 	}
 }

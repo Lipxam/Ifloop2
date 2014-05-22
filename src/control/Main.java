@@ -24,7 +24,7 @@ public class Main
 		control = new Control(graphics);
 		window = graphics.getWindow();
 		
-		control.currentLevel = level0();
+		control.setLevel(level0());
 		
 		//main loop
 		while(true)

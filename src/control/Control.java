@@ -27,7 +27,7 @@ public class Control
 	public void setLevel(Level l)
 	{
 		currentLevel = l;
-		
+		graphics.setLevel(l);
 	}
 	
 	public void nextLevel()

@@ -1,7 +1,6 @@
 package graphics;
 
-import items.Machine;
-import items.Materiel;
+import items.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.File;
@@ -117,6 +116,11 @@ public class G
 	{
 		level = l;
 		imageManager.loadImages(level);
+		
+		for(Item i: level.getItems())
+		{
+			i.imgs = imageManager.map.get(i.getClass());
+		}
 	}
 	
 	private void drawLevel(Graphics g)

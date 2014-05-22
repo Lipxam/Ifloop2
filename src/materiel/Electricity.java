@@ -1,7 +1,7 @@
 package materiel;
 
 import items.Materiel;
-import java.awt.Graphics;
+import java.awt.*;
 import data.Direction;
 import data.Location;
 
@@ -15,10 +15,10 @@ public class Electricity extends Materiel
 		addPassesThrough("Machine");
 	}
 
-	@Override
-	public void draw(Graphics g)
+	public void draw(Graphics g, Rectangle bounds)
 	{
 		// TODO Auto-generated method stub
-		
+		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
+		g.drawImage(img, rect.x, rect.y, rect.width, rect.height, null);
 	}
 }
