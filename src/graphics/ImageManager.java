@@ -21,12 +21,10 @@ public class ImageManager
 	{
 		if(map.containsKey(type))
 			return;
-		
 		//TODO load all the images associated with this class into the map
 		List<Image> imgList = new ArrayList<Image>();
 		
-		File dir = new File("img");
-		for(File f: listAllFiles(dir))
+		for(File f: new File("img").listFiles())
 		{
 			//this file is of type type
 			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
@@ -44,6 +42,8 @@ public class ImageManager
 		}
 		
 		map.put(type, imgList);
+		
+		System.out.println(type.getSimpleName() + "ÑÑÑ" + imgList);
 	}
 	
 	private List<File> listAllFiles(File dir)

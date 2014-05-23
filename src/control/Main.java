@@ -2,6 +2,9 @@ package control;
 
 import graphics.G;
 import java.awt.Window;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import machines.*;
 import data.Level;
 import data.Location;
