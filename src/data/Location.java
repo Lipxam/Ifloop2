@@ -83,4 +83,9 @@ public class Location
 	{
 		return "Location [x=" + x + ", y=" + y + "]";
 	}
+
+	public boolean outOfBounds()
+	{
+		return (x > 20 || x < 0 || y > 15 || y < 0);
+	}
 }
