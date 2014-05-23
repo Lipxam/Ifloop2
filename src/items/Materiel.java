@@ -72,5 +72,6 @@ public abstract class Materiel extends Item implements Moveable
 	{
 		// just changes the location of the materiel
 		loc.move(moveDirection);
+		System.out.println(loc);
 	}
 }

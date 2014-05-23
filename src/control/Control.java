@@ -84,7 +84,9 @@ public class Control
 					break;
 				}
 			}
-			
+			i.step();
+			if(loc.outOfBounds())
+				grid.removeItem(i);
 		}
 	}
 }
