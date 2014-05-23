@@ -88,6 +88,7 @@ public class G
 					strat.show();
 					g.dispose();*/
 					
+					Thread.sleep(500);
 					while(true)
 					{
 						g = strat.getDrawGraphics();

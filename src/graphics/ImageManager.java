@@ -24,9 +24,9 @@ public class ImageManager
 		//TODO load all the images associated with this class into the map
 		List<Image> imgList = new ArrayList<Image>();
 		
+		
 		for(File f: new File("img").listFiles())
 		{
-			System.out.println(f);
 			//this file is of type type
 			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
 			{
