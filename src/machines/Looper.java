@@ -1,8 +1,7 @@
 package machines;
 
 import items.*;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +68,8 @@ public class Looper extends Machine implements Powered
 	public void draw(Graphics g, Rectangle bounds)
 	{
 		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
-		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
+		//g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
+		g.setColor(Color.BLACK);
+		g.fillRect(rect.x, rect.y, rect.width, rect.height);
 	}
 }

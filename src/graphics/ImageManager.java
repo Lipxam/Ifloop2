@@ -32,7 +32,6 @@ public class ImageManager
 			{
 				try
 				{
-					System.out.println(f);
 					imgList.add(ImageIO.read(f));
 				}
 				catch(IOException e)
@@ -44,8 +43,6 @@ public class ImageManager
 		}
 		
 		map.put(type, imgList);
-		
-		System.out.println(type.getSimpleName() + "ÑÑÑ" + imgList);
 	}
 	
 	private List<File> listAllFiles(File dir)

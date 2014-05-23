@@ -28,8 +28,8 @@ public abstract class Item
 	//there are 20 rows and 15 columns
 	public static Rectangle mapGridtoPixels(Rectangle bounds, int row, int col)
 	{
-		int x = bounds.width / col;
-		int y = bounds.height / row;
+		int x = bounds.width / (col + 1);
+		int y = bounds.height / (row + 1);
 		
 		return new Rectangle(x, y, 40, 40);
 	}
