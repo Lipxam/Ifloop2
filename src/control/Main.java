@@ -11,7 +11,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
-		
+		new Main();
 	}
 	
 	Control control;
@@ -20,15 +20,15 @@ public class Main
 	
 	public Main()
 	{
-		graphics = new G();
-		control = new Control(graphics);
-		window = graphics.getWindow();
-		
-		control.setLevel(level0());
 		
 		// main loop
 		try
 		{
+			graphics = new G();
+			control = new Control(graphics);
+			window = graphics.getWindow();
+			
+			control.setLevel(level0());
 			while(true)
 			{
 				// get input
@@ -39,9 +39,10 @@ public class Main
 				Thread.sleep(30);
 			}
 		}
-		catch(InterruptedException ex)
-		{	
-			
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			System.exit(0);
 		}
 	}
 	

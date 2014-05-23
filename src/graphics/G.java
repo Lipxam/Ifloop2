@@ -42,7 +42,7 @@ public class G
 				
 				try
 				{
-					Image splashpng = ImageIO.read(new File("img/splash_text.png"));
+					/*Image splashpng = ImageIO.read(new File("img/splash_text.png"));
 					int imgW = (int) (640 * 1.8), imgH = (int) (400 * 2);
 					
 					g.setColor(Color.WHITE);
@@ -86,23 +86,15 @@ public class G
 					}
 					
 					strat.show();
-					g.dispose();
-				}
-				catch(IOException e)
-				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				catch(InterruptedException ex)
-				{}
-				
-				while(true)
-				{
-					g = strat.getDrawGraphics();
-					if(!strat.contentsLost())
+					g.dispose();*/
+					
+					Thread.sleep(500);
+					while(true)
 					{
-						try
+						g = strat.getDrawGraphics();
+						if(!strat.contentsLost())
 						{
+							drawLevel(g);
 							
 							strat.show();
 							g.dispose();
@@ -110,9 +102,13 @@ public class G
 							Thread.sleep(10);
 						}
 						
-						catch(InterruptedException ex)
-						{}
 					}
+				}
+				
+				catch(Exception ex)
+				{
+					ex.printStackTrace();
+					System.exit(0);
 				}
 			}
 		}).start();
@@ -121,17 +117,16 @@ public class G
 	public void setLevel(Level l)
 	{
 		level = l;
-		imageManager.loadImages(level);
+		//imageManager.loadImages(level);
 		
 		for(Item i: level.getItems())
 		{
-			i.imgs = imageManager.map.get(i.getClass());
+			//i.imgs = imageManager.map.get(i.getClass());
 		}
 	}
 	
 	private void drawLevel(Graphics g)
 	{
-		
 		// TODO draw background
 		
 		// draw wires
@@ -163,10 +158,5 @@ public class G
 	public void setWindow(JFrame window)
 	{
 		this.window = window;
-	}
-	
-	public static void main(String...args)
-	{
-		new G();
 	}
 }

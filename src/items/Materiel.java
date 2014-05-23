@@ -9,7 +9,7 @@ public abstract class Materiel extends Item implements Moveable
 {
 	List<Class<? extends Machine>> passesThrough = new ArrayList<Class<? extends Machine>>();
 	
-	//where this came from
+	// where this came from
 	Machine parent;
 	Direction moveDirection;
 	
@@ -24,13 +24,22 @@ public abstract class Materiel extends Item implements Moveable
 		addPassesThrough("Wire");
 		moveDirection = d;
 	}
-
+	
 	public void addPassesThrough(String string)
 	{
+		if(!string.contains("."))
+		{
+			if(string.equals("Machine"))
+				string = "items." + string;
+			else
+				string = "machines." + string;
+		}
+		
 		try
 		{
-			passesThrough.add((Class<? extends Machine>)Class.forName(string));
-		} catch (ClassNotFoundException e)
+			passesThrough.add((Class<? extends Machine>) Class.forName(string));
+		}
+		catch(ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,17 +50,18 @@ public abstract class Materiel extends Item implements Moveable
 	{
 		for(Class<? extends Machine> c: passesThrough)
 		{
-			if(true)//m is of type/subtype c
+			if(true)
+				// m is of type/subtype c
 				return true;
 		}
 		return passesThrough.contains(m.getClass());
 	}
-
+	
 	public boolean inMotion()
 	{
 		return moveDirection != null;
 	}
-
+	
 	@Override
 	public Direction getDirection()
 	{
@@ -60,7 +70,7 @@ public abstract class Materiel extends Item implements Moveable
 	
 	public void step()
 	{
-		//just changes the location of the materiel
+		// just changes the location of the materiel
 		loc.move(moveDirection);
 	}
 }
