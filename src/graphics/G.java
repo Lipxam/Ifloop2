@@ -42,13 +42,13 @@ public class G
 				
 				try
 				{
-					Image splashpng = ImageIO.read(new File("img/splash_text.png"));
+					/*Image splashpng = ImageIO.read(new File("img/splash_text.png"));
 					int imgW = (int) (640 * 1.8), imgH = (int) (400 * 2);
 					
 					g.setColor(Color.WHITE);
 					g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 					g.setColor(Color.BLACK);
-					/*for(int i = 0; i < 200; i++)
+					for(int i = 0; i < 200; i++)
 					{
 						if(!strat.contentsLost())
 						{
@@ -83,11 +83,11 @@ public class G
 						imgH, null);
 						strat.show();
 						g.dispose();
-					}*/
+					}
 					
 					strat.show();
-					g.dispose();
-				
+					g.dispose();*/
+					
 					while(true)
 					{
 						g = strat.getDrawGraphics();

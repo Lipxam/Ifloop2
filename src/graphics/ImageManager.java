@@ -26,11 +26,13 @@ public class ImageManager
 		
 		for(File f: new File("img").listFiles())
 		{
+			System.out.println(f);
 			//this file is of type type
 			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
 			{
 				try
 				{
+					System.out.println(f);
 					imgList.add(ImageIO.read(f));
 				}
 				catch(IOException e)
