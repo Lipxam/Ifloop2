@@ -74,8 +74,6 @@ public class Lightbulb extends Machine implements Powered
 	public void draw(Graphics g, Rectangle bounds)
 	{
 		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
-		//g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
-		g.setColor(Color.RED);
-		g.fillRect(rect.x, rect.y, rect.width, rect.height);
+		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
 	}
 }

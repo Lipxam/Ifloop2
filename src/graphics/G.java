@@ -117,11 +117,11 @@ public class G
 	public void setLevel(Level l)
 	{
 		level = l;
-		//imageManager.loadImages(level);
+		imageManager.loadImages(level);
 		
 		for(Item i: level.getItems())
 		{
-			//i.imgs = imageManager.map.get(i.getClass());
+			i.imgs = imageManager.map.get(i.getClass());
 		}
 	}
 	
