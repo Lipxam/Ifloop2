@@ -1,13 +1,14 @@
 package control;
 
+import graphics.G;
 import items.*;
 import java.util.List;
 import java.util.ListIterator;
+import machines.Wire;
 import data.*;
-import graphics.G;
 
 public class Control
-{	
+{
 	private Level currentLevel;
 	ElectricityControl eControl;
 	G graphics;
@@ -17,11 +18,11 @@ public class Control
 		eControl = new ElectricityControl(currentLevel);
 		graphics = g;
 	}
-
+	
 	public void loadLevel(int n)
 	{
-		//TODO load n from dat file
-		//currentLevel = *loaded level*
+		// TODO load n from dat file
+		// currentLevel = *loaded level*
 	}
 	
 	public void setLevel(Level l)
@@ -40,53 +41,65 @@ public class Control
 	{
 		loadLevel(getLevelNum());
 	}
-
+	
 	public int getLevelNum()
 	{
 		return currentLevel.getNum();
 	}
 	
+	int steps = 0;
+	
 	public void step()
 	{
-		eControl.step();
-		
-		Grid grid = currentLevel.getGrid();
-		for(Machine i: grid.getMachines())
+		synchronized(currentLevel)
 		{
-			// gather all materiels in i's location
-			List<Item> items = grid.getItemsAtLoc(i.getLocation());
-			ListIterator<Item> iterator = items.listIterator();
-			while(iterator.hasNext())
-			{
-				if(!(iterator.next() instanceof Materiel))
-					iterator.remove();
-			}
 			
-			Machine mac = (Machine) i;
-			List<Materiel> outputs = mac.step(items);
+			steps++;
+			eControl.step();
 			
-			// release outputs into world
-			for(Materiel m: outputs)
+			Grid grid = currentLevel.getGrid();
+			for(Machine i: grid.getMachines())
 			{
-				grid.addItem(m);
-			}
-		}
-		
-		for(Materiel i: grid.getMateriels())
-		{
-			Location loc = i.getLocation();
-			// TODO remove materiel if applicable
-			for(Machine x: grid.getMachinesAtLoc(loc))
-			{
-				if(!i.passesThrough(x))
+				// gather all materiels in i's location
+				List<Item> items = grid.getItemsAtLoc(i.getLocation());
+				ListIterator<Item> iterator = items.listIterator();
+				while(iterator.hasNext())
 				{
-					grid.removeItem(i);
-					break;
+					if(!(iterator.next() instanceof Materiel))
+						iterator.remove();
 				}
+				
+				Machine mac = (Machine) i;
+				List<Materiel> outputs = mac.step(items);
+				
+				// release outputs into world
+				for(Materiel m: outputs)
+				{
+					grid.addItem(m);
+				}
+				
+				//if(mac instanceof Wire)
+					//System.out.println("Step " + steps + ":Wire: " + mac);
 			}
-			i.step();
-			if(loc.outOfBounds())
-				grid.removeItem(i);
+			
+			for(Materiel i: grid.getMateriels())
+			{
+				Location loc = i.getLocation();
+				// TODO remove materiel if applicable
+				for(Machine x: grid.getMachinesAtLoc(loc))
+				{
+					if(!i.passesThrough(x))
+					{
+						grid.removeItem(i);
+						break;
+					}
+				}
+				i.step();
+				if(loc.outOfBounds())
+					grid.removeItem(i);
+			}
+			
+			System.out.println("Step " + steps + ": " + grid);
 		}
 	}
 }

@@ -23,16 +23,17 @@ public class ElectricityControl
 			{
 				Electricity e = (Electricity)m;
 				
-				boolean keep = false;
+				boolean remove = true;
 				for(Machine mac: level.getMachinesAtLoc(e.getLocation()))
 				{
 					if(mac instanceof Wire)
-						keep = true;
+						remove = false;
 				}
 				
-				if(!keep)
+				if(remove)
 				{
 					level.removeItem(e);
+					//System.out.println("Removed Electricity at " + e.getLocation());
 				}
 			}
 		}

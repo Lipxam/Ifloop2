@@ -11,4 +11,19 @@ public class Direction
 	{
 		d = direction;
 	}
+	@Override
+	public String toString()
+	{
+		String s = "";
+		switch(direction)
+		{
+			case LEFT: s += "LEFT"; break;
+			case RIGHT: s += "RIGHT"; break;
+			case UP: s += "UP"; break;
+			case DOWN: s += "DOWN"; break;
+			
+		}
+		
+		return "Direction " + s;
+	}
 }

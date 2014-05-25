@@ -7,6 +7,8 @@ import data.Location;
 
 public abstract class Materiel extends Item implements Moveable
 {
+	int steps = 0;
+	
 	List<Class<? extends Machine>> passesThrough = new ArrayList<Class<? extends Machine>>();
 	
 	// where this came from
@@ -70,8 +72,15 @@ public abstract class Materiel extends Item implements Moveable
 	
 	public void step()
 	{
+		steps++;
 		// just changes the location of the materiel
-		loc.move(moveDirection);
-		System.out.println(loc);
+		loc = loc.move(moveDirection);
+		System.out.println("Step " + steps + ": " + toString());
+	}
+
+	@Override
+	public String toString()
+	{
+		return getClass().getName() + " [parent=" + parent + ", moveDirection=" + moveDirection + ", loc=" + loc + "]";
 	}
 }

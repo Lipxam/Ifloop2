@@ -78,4 +78,10 @@ public class Grid implements Iterable<Item>
 		
 		return result;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Grid [items=" + items + "]";
+	}
 }

@@ -8,7 +8,6 @@ public abstract class Item
 {
 	public java.util.List<Image> imgs;
 	
-	int width, height;
 	protected Location loc;
 	
 	public Item(Location l)
@@ -32,5 +31,11 @@ public abstract class Item
 		int y = bounds.height / (row + 1);
 		
 		return new Rectangle(x, y, 40, 40);
+	}
+
+	@Override
+	public String toString()
+	{
+		return getClass().getName() + " [loc=" + loc + "]";
 	}
 }

@@ -15,7 +15,7 @@ public class Water extends Materiel
 
 	public void draw(Graphics g, Rectangle bounds)
 	{
-		// TODO Auto-generated method stub
-		
+		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
+		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
 	}
 }

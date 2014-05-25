@@ -3,9 +3,10 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 
+//this must be immutable
 public class Location
 {	
-	int x, y;
+	private int x, y;
 	
 	public Location(int x, int y)
 	{
@@ -31,15 +32,17 @@ public class Location
 		return new Direction(-1);
 	}
 	
-	public void move(Direction d)
+	public Location move(Direction d)
 	{
+		Location r = new Location(x, y);
 		switch(d.direction)
 		{
-			case Direction.DOWN: y--; break;
-			case Direction.UP: y++; break;
-			case Direction.LEFT: x--; break;
-			case Direction.RIGHT: x++; break;
+			case Direction.DOWN: r.y++; break;
+			case Direction.UP: r.y--; break;
+			case Direction.LEFT: r.x--; break;
+			case Direction.RIGHT: r.x++; break;
 		}
+		return r;
 	}
 	
 	public boolean equals(Object obj)

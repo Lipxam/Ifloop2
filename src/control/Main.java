@@ -2,7 +2,7 @@ package control;
 
 import graphics.G;
 import java.awt.Window;
-import machines.*;
+import materiel.Water;
 import data.Level;
 import data.Location;
 
@@ -36,7 +36,7 @@ public class Main
 				control.step();
 				// redraw
 				
-				Thread.sleep(30);
+				Thread.sleep(500);
 			}
 		}
 		catch(Exception ex)
@@ -49,11 +49,12 @@ public class Main
 	public Level level0()
 	{
 		Level level = new Level(0);
-		level.addItem(new Looper(new Location(3, 4)));
-		level.addItem(new Wire(new Location(3, 3)));
-		level.addItem(new Wire(new Location(3, 2)));
-		level.addItem(new Wire(new Location(3, 1)));
-		level.addItem(new Lightbulb(new Location(3, 1)));
+		//level.addItem(new Looper(new Location(3, 4)));
+		//level.addItem(new Wire(new Location(3, 3)));
+		//level.addItem(new Wire(new Location(3, 2)));
+		//level.addItem(new Wire(new Location(3, 1)));
+		//level.addItem(new LaserOut(new Location(3, 1)));
+		level.addItem(new Water(new Location(5, 1)));
 		
 		return level;
 	}
