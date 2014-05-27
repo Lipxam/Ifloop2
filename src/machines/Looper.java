@@ -1,10 +1,12 @@
 package machines;
 
 import items.*;
+
 import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+
 import data.Direction;
 import data.Location;
 
@@ -18,28 +20,25 @@ public class Looper extends Machine implements Powered
 		super(loc);
 		addInputType("materiel.Electricity");
 		addOutputType("materiel.Electricity");
+		setActive(true);
 	}
 	
-	public List<Materiel> step(List<Item> inputs)
+	public List<Materiel> step(List<Item> inputsObs)
 	{
-		setActive(true);
-		
 		List<Materiel> result = new ArrayList<Materiel>();
-		for(Class<? extends Materiel> o: outputs)
+		if(isActive())
 		{
-			try
+			for(Class<? extends Materiel> o: outputs)
 			{
-				for(Class<? extends Materiel> a: outputs)
+				try
 				{
-					Constructor c = a.getDeclaredConstructor(Class.forName("data.Location"), Class.forName("data.Direction"));
-					result.add((Materiel)(c.newInstance(new Location(loc.getX(), loc.getY() - 1), new Direction(Direction.UP))));
+						Constructor c = o.getDeclaredConstructor(Class.forName("data.Location"), Class.forName("data.Direction"));
+						result.add((Materiel)(c.newInstance(this.loc, new Direction(Direction.UP))));
 				}
-				
-			}
-			catch(Exception e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				catch(Exception ex)
+				{
+					ex.printStackTrace();
+				}
 			}
 		}
 		return result;

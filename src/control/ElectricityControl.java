@@ -17,10 +17,13 @@ public class ElectricityControl
 	
 	public void step()
 	{
+		int count = 0;
 		for(Materiel m: level.getMateriels())
 		{
 			if(m instanceof Electricity)
 			{
+				count++;
+				System.out.println(m.getLocation());
 				Electricity e = (Electricity)m;
 				
 				boolean remove = true;

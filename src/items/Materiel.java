@@ -25,6 +25,7 @@ public abstract class Materiel extends Item implements Moveable
 		super(l);
 		addPassesThrough("Wire");
 		moveDirection = d;
+
 	}
 	
 	public void addPassesThrough(String string)
@@ -75,7 +76,6 @@ public abstract class Materiel extends Item implements Moveable
 		steps++;
 		// just changes the location of the materiel
 		loc = loc.move(moveDirection);
-		System.out.println("Step " + steps + ": " + toString());
 	}
 
 	@Override

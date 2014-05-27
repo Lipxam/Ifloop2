@@ -25,10 +25,10 @@ public abstract class Item
 	}
 	
 	//there are 20 rows and 15 columns
-	public static Rectangle mapGridtoPixels(Rectangle bounds, int row, int col)
+	public static Rectangle mapGridtoPixels(Rectangle bounds, int gridX, int gridY)
 	{
-		int x = bounds.width / (col + 1);
-		int y = bounds.height / (row + 1);
+		int x = bounds.width / 15 * (gridX + 1);
+		int y = bounds.height / 20 * (gridY + 1);
 		
 		return new Rectangle(x, y, 40, 40);
 	}

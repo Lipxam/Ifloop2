@@ -1,7 +1,12 @@
 package control;
 
 import graphics.G;
+
 import java.awt.Window;
+
+import machines.LaserOut;
+import machines.Looper;
+import machines.Wire;
 import materiel.Water;
 import data.Level;
 import data.Location;
@@ -49,12 +54,12 @@ public class Main
 	public Level level0()
 	{
 		Level level = new Level(0);
-		//level.addItem(new Looper(new Location(3, 4)));
-		//level.addItem(new Wire(new Location(3, 3)));
-		//level.addItem(new Wire(new Location(3, 2)));
-		//level.addItem(new Wire(new Location(3, 1)));
-		//level.addItem(new LaserOut(new Location(3, 1)));
-		level.addItem(new Water(new Location(5, 1)));
+		level.addItem(new Looper(new Location(6, 14)));
+		level.addItem(new Wire(new Location(6, 13)));
+		//level.addItem(new Wire(new Location(6, 12)));
+		//level.addItem(new Wire(new Location(6, 11)));
+		level.addItem(new LaserOut(new Location(6, 11)));
+	//	level.addItem(new Water(new Location(5, 1)));
 		
 		return level;
 	}

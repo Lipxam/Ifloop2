@@ -17,8 +17,6 @@ public class Kettle extends Machine implements Powered
 	Direction c = new Direction(3);
 	Direction d = new Direction(4);
 	boolean active;
-	boolean setactive;
-	List<Materiel> result = new ArrayList<Materiel>();
 	
 	public Kettle(Location loc)
 	{
@@ -29,6 +27,7 @@ public class Kettle extends Machine implements Powered
 	
 	public List<Materiel> step(List<Item> inputsObs)
 	{
+		List<Materiel> result = new ArrayList<Materiel>();
 		for(Item a: inputsObs)
 		{
 			for(Class<? extends Materiel> b: inputs1)
@@ -45,17 +44,12 @@ public class Kettle extends Machine implements Powered
 			{
 				try
 				{
-					for(Class<? extends Materiel> a: outputs)
-					{
-						Constructor c = a.getDeclaredConstructor(Class.forName("Location"));
+						Constructor c = o.getDeclaredConstructor(Class.forName("data.Location"));
 						result.add((Materiel)(c.newInstance(this.loc)));
-					}
-					
 				}
-				catch(Exception e)
+				catch(Exception ex)
 				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					ex.printStackTrace();
 				}
 			}
 		}

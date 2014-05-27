@@ -12,7 +12,7 @@ public abstract class Machine extends Item
 	// list of accpeted inputs and outputs
 	protected List<Class<? extends Materiel>> inputs1, outputs;
 	
-	Direction orientation;
+	protected Direction orientation = new Direction(0);
 	
 	boolean userPlaceable = false;
 	

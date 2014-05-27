@@ -78,8 +78,8 @@ public class Control
 					grid.addItem(m);
 				}
 				
-				//if(mac instanceof Wire)
-					//System.out.println("Step " + steps + ":Wire: " + mac);
+				if(mac instanceof Wire)
+					System.out.println("Step " + steps + ":Wire: " + mac);
 			}
 			
 			for(Materiel i: grid.getMateriels())
@@ -95,7 +95,7 @@ public class Control
 					}
 				}
 				i.step();
-				if(loc.outOfBounds())
+				if(i.getLocation().outOfBounds())
 					grid.removeItem(i);
 			}
 			

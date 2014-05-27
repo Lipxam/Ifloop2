@@ -85,19 +85,16 @@ public class G
 //					}
 					
 					Thread.sleep(500);
-					int x = 0;
 					while(true)
 					{
 						g = strat.getDrawGraphics();
 						if(!strat.contentsLost())
 						{
-							//drawLevel(g);
 							g.setColor(Color.WHITE);
 							g.fillRect(0, 0, bounds.width, bounds.height);
-							g.setColor(Color.BLACK);
-							g.fillRect(x, x, 50, 50);
-							x += 40;
-
+							
+							drawLevel(g);
+							
 							strat.show();
 							g.dispose();
 							
