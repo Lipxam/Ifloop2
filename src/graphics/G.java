@@ -92,8 +92,9 @@ public class G
 						if(!strat.contentsLost())
 						{
 							//drawLevel(g);
-							
-					
+							g.setColor(Color.WHITE);
+							g.fillRect(0, 0, bounds.width, bounds.height);
+							g.setColor(Color.BLACK);
 							g.fillRect(x, x, 50, 50);
 							x += 40;
 
