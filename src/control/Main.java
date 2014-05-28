@@ -1,13 +1,10 @@
 package control;
 
 import graphics.G;
-
+import items.Machine;
+import items.Powered;
 import java.awt.Window;
-
-import machines.LaserOut;
-import machines.Looper;
-import machines.Wire;
-import materiel.Water;
+import machines.*;
 import data.Level;
 import data.Location;
 
@@ -34,11 +31,20 @@ public class Main
 			window = graphics.getWindow();
 			
 			control.setLevel(level0());
+			int i = 0;
 			while(true)
 			{
+				if(i >= 6)
+				{
+					for(Machine m: control.currentLevel.getMachines())
+						if(m instanceof Looper)
+							((Powered)m).setActive(false);
+				}
+				
 				// get input
 				// step program
 				control.step();
+				i++;
 				// redraw
 				
 				Thread.sleep(500);
@@ -58,7 +64,7 @@ public class Main
 		level.addItem(new Wire(new Location(6, 13)));
 		//level.addItem(new Wire(new Location(6, 12)));
 		//level.addItem(new Wire(new Location(6, 11)));
-		level.addItem(new LaserOut(new Location(6, 11)));
+		level.addItem(new LaserOut(new Location(6, 8)));
 	//	level.addItem(new Water(new Location(5, 1)));
 		
 		return level;

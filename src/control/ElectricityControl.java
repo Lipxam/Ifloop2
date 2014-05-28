@@ -23,7 +23,7 @@ public class ElectricityControl
 			if(m instanceof Electricity)
 			{
 				count++;
-				System.out.println(m.getLocation());
+				System.out.println("Electricity: " + m.getLocation());
 				Electricity e = (Electricity)m;
 				
 				boolean remove = true;
@@ -36,7 +36,7 @@ public class ElectricityControl
 				if(remove)
 				{
 					level.removeItem(e);
-					//System.out.println("Removed Electricity at " + e.getLocation());
+					System.out.println("Removed Electricity at " + e.getLocation());
 				}
 			}
 		}

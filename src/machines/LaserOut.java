@@ -26,6 +26,7 @@ public class LaserOut extends Machine implements Powered
 	public List<Materiel> step(List<Item> inputsObs)
 	{
 		List<Materiel> result = new ArrayList<Materiel>();
+		setActive(false);
 		for(Item a: inputsObs)
 		{
 			for(Class<? extends Materiel> b: inputs1)

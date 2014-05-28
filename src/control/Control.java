@@ -9,7 +9,7 @@ import data.*;
 
 public class Control
 {
-	private Level currentLevel;
+	Level currentLevel;
 	ElectricityControl eControl;
 	G graphics;
 	
@@ -55,7 +55,6 @@ public class Control
 		{
 			
 			steps++;
-			eControl.step();
 			
 			Grid grid = currentLevel.getGrid();
 			for(Machine i: grid.getMachines())
@@ -100,6 +99,7 @@ public class Control
 			}
 			
 			System.out.println("Step " + steps + ": " + grid);
+			eControl.step();
 		}
 	}
 }
