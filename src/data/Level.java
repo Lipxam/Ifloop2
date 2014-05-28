@@ -1,9 +1,10 @@
 package data;
 
 import items.*;
+import java.io.Serializable;
 import java.util.*;
 
-public class Level
+public class Level implements Serializable
 {
 	private Grid grid = new Grid();
 	List<Machine> toolbar = new ArrayList<Machine>();

@@ -1,9 +1,10 @@
 package data;
 
 import items.*;
+import java.io.Serializable;
 import java.util.*;
 
-public class Grid implements Iterable<Item>
+public class Grid implements Iterable<Item>, Serializable
 {
 	private List<Item> items;
 	

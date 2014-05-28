@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //this must be immutable
-public class Location
+public class Location implements java.io.Serializable
 {	
 	private int x, y;
 	

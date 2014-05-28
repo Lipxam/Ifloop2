@@ -1,10 +1,11 @@
 package items;
 
 import java.awt.*;
+import java.io.Serializable;
 import data.Location;
 
 
-public abstract class Item 
+public abstract class Item implements Serializable
 {
 	public java.util.List<Image> imgs;
 	

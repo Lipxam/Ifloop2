@@ -1,6 +1,6 @@
 package data;
 
-public class Direction
+public class Direction implements java.io.Serializable
 {
 	public static final int LEFT = 0;
 	public static final int RIGHT = 1;
