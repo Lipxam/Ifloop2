@@ -61,19 +61,11 @@ public class Main
 	{
 		Level level = new Level(0);
 		level.addItem(new Looper(new Location(6, 14)));
-<<<<<<< HEAD
-		level.addItem(new Wire(new Location(6, 7)));
-		level.addItem(new Wire(new Location(6, 13)));
-		level.addItem(new Wire(new Location(6, 12)));
-		level.addItem(new LaserOut(new Location(6, 12)));
-		level.addItem(new LaserOut(new Location(6, 6)));
-=======
 		level.addItem(new Wire(new Location(6, 13)));
 		level.addItem(new Wire(new Location(6, 12)));
 		level.addItem(new Wire(new Location(6, 11)));
 		level.addItem(new LaserOut(new Location(6, 11)));
 		level.addItem(new LaserOut(new Location(6, 9)));
->>>>>>> FETCH_HEAD
 	//	level.addItem(new Water(new Location(5, 1)));
 		
 		return level;
