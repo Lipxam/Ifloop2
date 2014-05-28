@@ -76,9 +76,6 @@ public class Control
 				{
 					grid.addItem(m);
 				}
-				
-				if(mac instanceof Wire)
-					System.out.println("Step " + steps + ":Wire: " + mac);
 			}
 			
 			for(Materiel i: grid.getMateriels())

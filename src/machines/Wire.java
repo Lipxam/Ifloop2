@@ -1,11 +1,10 @@
 package machines;
 
 import items.*;
-import java.awt.*;
-import java.lang.reflect.Constructor;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
-import data.Direction;
 import data.Location;
 
 public class Wire extends Machine implements Powered
@@ -23,37 +22,7 @@ public class Wire extends Machine implements Powered
 	
 	public List<Materiel> step(List<Item> inputs)
 	{
-		for(Item a: inputs)
-		{
-			for(Class<? extends Materiel> b: inputs1)
-			{
-				if(b.isInstance(a))
-				{
-					setActive(true);
-				}
-			}
-		}
-		for(Class<? extends Materiel> o: outputs)
-		{
-			try
-			{
-				for(Class<? extends Materiel> a: outputs)
-				{
-					Constructor c = a.getDeclaredConstructor(Class.forName("data.Location"),
-					Class.forName("data.Direction"));
-					for(int i = 0; i < inputs.size(); i++)
-						result.add((Materiel) (c.newInstance(loc, ((Materiel) inputs.get(i)).getDirection())));
-					
-				}
-				
-			}
-			catch(Exception e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return result;
+		return new ArrayList<Materiel>();
 	}
 	
 	@Override
