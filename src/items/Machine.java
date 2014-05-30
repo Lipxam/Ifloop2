@@ -10,7 +10,9 @@ public abstract class Machine extends Item
 {
 	// TODO make input/output
 	// list of accpeted inputs and outputs
-	protected List<Class<? extends Materiel>> inputs1, outputs;
+	 protected List<Class<? extends Materiel>> inputs1;
+
+	public List<Class<? extends Materiel>> outputs;
 	
 	protected Direction orientation = new Direction(0);
 	

@@ -1,11 +1,16 @@
 package graphics;
 
 import items.Item;
+import items.Machine;
+import items.Materiel;
+
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+
 import javax.imageio.ImageIO;
+
 import data.Level;
 
 public class ImageManager
@@ -28,8 +33,10 @@ public class ImageManager
 		for(File f: new File("img").listFiles())
 		{
 			//this file is of type type
+			System.out.println("trying to load "+type.getSimpleName().toLowerCase());
 			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
 			{
+				System.out.println("loaded "+type.getSimpleName().toLowerCase());
 				try
 				{
 					imgList.add(ImageIO.read(f));
@@ -67,6 +74,14 @@ public class ImageManager
 		for(Item i: l.getItems())
 		{
 			loadImages(i.getClass());
+			if(i instanceof Machine)
+			{
+				Machine m = (Machine)i;
+				for(Class<? extends Materiel> p: m.outputs)
+				{
+					getImages(p.getClass());
+				}
+			}
 		}
 		for(Item i: l.getToolbar())
 		{
@@ -74,8 +89,8 @@ public class ImageManager
 		}
 	}
 	
-	public List<Image> getImages(Class<? extends Item> type)
+	public List<Image> getImages(Class<? extends Class> class1)
 	{
-		return map.get(type);
+		return map.get(class1);
 	}
 }

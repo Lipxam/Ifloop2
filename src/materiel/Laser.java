@@ -19,7 +19,6 @@ public class Laser extends Materiel
 	public void draw(Graphics g, Rectangle bounds)
 	{
 		Rectangle rect = mapGridtoPixels(bounds, loc.getX(), loc.getY());
-		g.setColor(Color.BLACK);
-		g.fillRect(rect.x + 5, rect.y + 5, rect.width - 10, rect.height - 10);
+		g.drawImage(imgs.get(0), rect.x, rect.y, rect.width, rect.height, null);
 	}
 }

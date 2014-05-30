@@ -11,12 +11,13 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Window;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferStrategy;
 
 import machines.Wire;
 import data.Grid;
 
-public class GridDisplay extends EventListener
+public class GridDisplay extends MouseMotionAdapter
 {
 	private Grid grid;
 	private Window window;
