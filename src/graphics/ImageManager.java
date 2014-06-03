@@ -48,7 +48,8 @@ public class ImageManager
 	}
 	
 	private List<File> listAllFiles(File dir)
-	{
+	{ 
+		//needs to test if machine and load it's outputs if it is
 		List<File> result = new ArrayList<File>();
 		if(dir.isDirectory())
 		{
