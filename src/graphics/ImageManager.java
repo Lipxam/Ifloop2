@@ -1,16 +1,11 @@
 package graphics;
 
-import items.Item;
-import items.Machine;
-import items.Materiel;
-
+import items.*;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
 import javax.imageio.ImageIO;
-
 import data.Level;
 
 public class ImageManager
@@ -77,9 +72,9 @@ public class ImageManager
 			if(i instanceof Machine)
 			{
 				Machine m = (Machine)i;
-				for(Class<? extends Materiel> p: m.outputs)
+				for(Class<? extends Item> p: m.outputs)
 				{
-					getImages(p.getClass());
+					loadImages(p);
 				}
 			}
 		}
@@ -89,7 +84,7 @@ public class ImageManager
 		}
 	}
 	
-	public List<Image> getImages(Class<? extends Class> class1)
+	public List<Image> getImages(Class<? extends Item> class1)
 	{
 		return map.get(class1);
 	}
