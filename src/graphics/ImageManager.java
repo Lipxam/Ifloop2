@@ -28,7 +28,6 @@ public class ImageManager
 		for(File f: new File("img").listFiles())
 		{
 			//this file is of type type
-			System.out.println("trying to load "+type.getSimpleName().toLowerCase());
 			if(f.getPath().substring(f.getPath().lastIndexOf('/')).contains(type.getSimpleName().toLowerCase()))
 			{
 				System.out.println("loaded "+type.getSimpleName().toLowerCase());
