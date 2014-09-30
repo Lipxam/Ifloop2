@@ -1,12 +1,10 @@
 package control;
 
 import graphics.G;
-import items.Machine;
-import items.Powered;
+import items.*;
 import java.awt.Window;
 import machines.*;
-import data.Level;
-import data.Location;
+import data.*;
 
 public class Main
 {

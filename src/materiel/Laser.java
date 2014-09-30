@@ -1,13 +1,11 @@
 package materiel;
 
-import items.Materiel;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Laser extends Materiel
 {

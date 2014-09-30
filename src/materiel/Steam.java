@@ -1,10 +1,8 @@
 package materiel;
 
-import items.Materiel;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Steam extends Materiel
 {

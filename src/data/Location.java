@@ -28,14 +28,13 @@ public class Location implements java.io.Serializable
 	
 	public Direction directionTowards(Location other)
 	{
-		//TODO
-		return new Direction(-1);
+		throw new UnsupportedOperationException();
 	}
 	
-	public Location move(Direction d)
+	public Location move(int d)
 	{
 		Location r = new Location(x, y);
-		switch(d.direction)
+		switch(d)
 		{
 			case Direction.DOWN: r.y++; break;
 			case Direction.UP: r.y--; break;
@@ -89,6 +88,7 @@ public class Location implements java.io.Serializable
 
 	public boolean outOfBounds()
 	{
-		return (x > 20 || x < 0 || y > 15 || y < 0);
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

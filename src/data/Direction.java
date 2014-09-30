@@ -1,18 +1,14 @@
 package data;
 
-public class Direction implements java.io.Serializable
+public final class Direction
 {
 	public static final int LEFT = 0;
 	public static final int RIGHT = 1;
 	public static final int UP = 2;
 	public static final int DOWN = 3;
-	public int direction;
-	public Direction(int d)
-	{
-		direction = d;
-	}
-	@Override
-	public String toString()
+	
+
+	public static String toString(int direction)
 	{
 		String s = "";
 		switch(direction)
@@ -26,4 +22,6 @@ public class Direction implements java.io.Serializable
 		
 		return "Direction " + s;
 	}
+	
+	private Direction(){}
 }

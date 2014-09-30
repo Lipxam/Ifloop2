@@ -7,8 +7,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 import materiel.Water;
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Kettle extends Machine implements Powered
 {
@@ -30,7 +29,7 @@ public class Kettle extends Machine implements Powered
 		List<Materiel> result = new ArrayList<Materiel>();
 		for(Item a: inputsObs)
 		{
-			for(Class<? extends Materiel> b: inputs1)
+			for(Class<? extends Materiel> b: requiredInputs)
 			{
 				if(b.isInstance(a))
 				{
@@ -40,7 +39,7 @@ public class Kettle extends Machine implements Powered
 		}
 		if(isActive() == true)
 		{
-			for(Class<? extends Materiel> o: outputs)
+			for(Class<? extends Materiel> o: requiredOutputs)
 			{
 				try
 				{

@@ -1,7 +1,7 @@
 package machines;
 
 import data.Location;
-import items.Machine;
+import data.Machine;
 
 public abstract class ChargeableMachine extends Machine
 {

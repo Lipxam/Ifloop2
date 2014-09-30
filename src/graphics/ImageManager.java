@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import javax.imageio.ImageIO;
-import data.Level;
+import data.*;
 
 public class ImageManager
 {
@@ -72,7 +72,7 @@ public class ImageManager
 			if(i instanceof Machine)
 			{
 				Machine m = (Machine)i;
-				for(Class<? extends Item> p: m.outputs)
+				for(Class<? extends Item> p: m.requiredOutputs)
 				{
 					loadImages(p);
 				}

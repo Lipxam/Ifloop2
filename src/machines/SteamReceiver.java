@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
-import data.Location;
+import data.*;
 
 public class SteamReceiver extends Machine implements Powered
 {
@@ -23,14 +23,14 @@ public class SteamReceiver extends Machine implements Powered
 	{
 		for(Item a: inputs)
 		{
-			for(Class<? extends Materiel> b : inputs1)
+			for(Class<? extends Materiel> b : requiredInputs)
 			{
 				if(b.isInstance(a))
 				{
 					setActive(true);
 				}
 			}
-		}		for(Class<? extends Materiel> o: outputs)
+		}		for(Class<? extends Materiel> o: requiredOutputs)
 		{
 			try
 			{

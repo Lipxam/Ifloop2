@@ -1,9 +1,7 @@
 package materiel;
 
-import items.Materiel;
 import java.awt.*;
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Electricity extends Materiel
 {

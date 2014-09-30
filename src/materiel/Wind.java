@@ -2,9 +2,7 @@ package materiel;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import items.Materiel;
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Wind extends Materiel
 {

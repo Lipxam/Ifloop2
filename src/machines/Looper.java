@@ -7,8 +7,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Looper extends Machine implements Powered
 {
@@ -28,7 +27,7 @@ public class Looper extends Machine implements Powered
 		List<Materiel> result = new ArrayList<Materiel>();
 		if(isActive())
 		{
-			for(Class<? extends Materiel> o: outputs)
+			for(Class<? extends Materiel> o: requiredOutputs)
 			{
 				try
 				{

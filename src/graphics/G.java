@@ -1,14 +1,19 @@
 package graphics;
 
-import items.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.File;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import machines.Wire;
-import data.Level;
+import data.*;
 
 public class G
 {
+	public static void main(String...args)
+	{
+		new G();
+	}
+	
 	Level level;
 	ImageManager imageManager = new ImageManager();
 	
@@ -41,67 +46,67 @@ public class G
 				
 				try
 				{	
-//					//Image splashpng = ImageIO.read(new File("img/splash_text.png"));
-//					int imgW = (int) (640 * 1.8), imgH = (int) (400 * 2);
-//					g.setColor(Color.WHITE);
-//					g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-//					g.setColor(Color.BLACK);
-//					for(int i = 0; i < 200; i++)
-//					{
-//						g = strat.getDrawGraphics();
-//						if(!strat.contentsLost())
-//						{
-//							int rectWidth = (int) (Math.random() * 50) + 20, rectHeight = (int) (Math.random() * 50) + 20;
-//							Color c = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math
-//							.random() * 256));
-//							for(int j = 0; j < i / 25; j++)
-//							{
-//								c = c.darker();
-//								rectWidth += 20;
-//								rectHeight += 20;
-//							}
-//							g.setColor(c);
-//							for(int j = 0; j < 3; j++)
-//								g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
-//								(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
-//							//g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2,
-//							//imgW + 20, imgH, null);
-//							
-//							strat.show();
-//							//g.dispose();
-//							
-//							Thread.sleep(10);
-//						}
-//					}
-//					for(int i = 0; i < 100; i++)
-//					{
-//						g = strat.getDrawGraphics();
-//						g.setColor(new Color(0, 0, 0, i));
-//						g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-//						//g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20,
-//						//imgH, null);
-//						strat.show();
-//						g.dispose();
-//					}
-					
-					Thread.sleep(500);
-					while(true)
+					//Image splashpng = ImageIO.read(new File("img/splash_text.png"));
+					int imgW = (int) (640 * 1.8), imgH = (int) (400 * 2);
+					g.setColor(Color.WHITE);
+					g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+					g.setColor(Color.BLACK);
+					for(int i = 0; i < 200; i++)
 					{
 						g = strat.getDrawGraphics();
 						if(!strat.contentsLost())
 						{
-							g.setColor(Color.WHITE);
-							g.fillRect(0, 0, bounds.width, bounds.height);
-							
-							drawLevel(g);
+							int rectWidth = (int) (Math.random() * 50) + 20, rectHeight = (int) (Math.random() * 50) + 20;
+							Color c = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math
+							.random() * 256));
+							for(int j = 0; j < i / 25; j++)
+							{
+								c = c.darker();
+								rectWidth += 20;
+								rectHeight += 20;
+							}
+							g.setColor(c);
+							for(int j = 0; j < 3; j++)
+								g.fillRect((int) (Math.random() * (bounds.width + 100)) - 100,
+								(int) (Math.random() * (bounds.height + 100)) - 100, rectWidth, rectHeight);
+							//g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2,
+							//imgW + 20, imgH, null);
 							
 							strat.show();
-							g.dispose();
+							//g.dispose();
 							
-							Thread.sleep(20);
+							Thread.sleep(10);
 						}
-						
 					}
+					for(int i = 0; i < 100; i++)
+					{
+						g = strat.getDrawGraphics();
+						g.setColor(new Color(0, 0, 0, i));
+						g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+						//g.drawImage(splashpng, bounds.width / 2 - imgW / 2, bounds.height / 2 - imgH / 2, imgW + 20,
+						//imgH, null);
+						strat.show();
+						g.dispose();
+					}
+					
+					Thread.sleep(500);
+//					while(true)
+//					{
+//						g = strat.getDrawGraphics();
+//						if(!strat.contentsLost())
+//						{
+//							g.setColor(Color.WHITE);
+//							g.fillRect(0, 0, bounds.width, bounds.height);
+//							
+//							drawLevel(g);
+//							
+//							strat.show();
+//							g.dispose();
+//							
+//							Thread.sleep(20);
+//						}
+//						
+//					}
 				}
 				
 				catch(Exception ex)

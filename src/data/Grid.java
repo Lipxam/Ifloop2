@@ -1,12 +1,14 @@
 package data;
 
-import items.*;
 import java.io.Serializable;
 import java.util.*;
 
 public class Grid implements Iterable<Item>, Serializable
 {
-	private List<Item> items;
+	//accessed only by same package
+	List<Item> items;
+	
+	int cols = 15, rows = 20;
 	
 	public Grid()
 	{
@@ -80,9 +82,14 @@ public class Grid implements Iterable<Item>, Serializable
 		return result;
 	}
 
-	@Override
-	public String toString()
+	public int getNumCols()
 	{
-		return "Grid [items=" + items + "]";
+		return cols;
 	}
+
+	public int getNumRows()
+	{
+		return rows;
+	}
+	
 }

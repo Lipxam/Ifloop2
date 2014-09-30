@@ -4,7 +4,6 @@ import graphics.G;
 import items.*;
 import java.util.List;
 import java.util.ListIterator;
-import machines.Wire;
 import data.*;
 
 public class Control

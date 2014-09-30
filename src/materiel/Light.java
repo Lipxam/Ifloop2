@@ -3,9 +3,7 @@ package materiel;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import data.Direction;
-import data.Location;
-import items.Materiel;
+import data.*;
 
 public class Light extends Materiel
 {

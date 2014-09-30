@@ -1,7 +1,6 @@
 package graphics;
 
-import items.Machine;
-import items.Materiel;
+import items.*;
 
 import java.awt.Color;
 import java.awt.Frame;
@@ -14,8 +13,7 @@ import java.awt.Window;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferStrategy;
 
-import machines.Wire;
-import data.Grid;
+import data.*;
 
 public class GridDisplay extends MouseMotionAdapter
 {

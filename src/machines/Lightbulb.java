@@ -5,8 +5,7 @@ import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
-import data.Direction;
-import data.Location;
+import data.*;
 
 public class Lightbulb extends Machine implements Powered
 {
@@ -24,7 +23,7 @@ public class Lightbulb extends Machine implements Powered
 	{
 		for(Item a: inputs)
 		{
-			for(Class<? extends Materiel> b : inputs1)
+			for(Class<? extends Materiel> b : requiredInputs)
 			{
 				if(b.isInstance(a))
 				{
@@ -33,11 +32,11 @@ public class Lightbulb extends Machine implements Powered
 			}
 		}
 		
-		for(Class<? extends Materiel> o: outputs)
+		for(Class<? extends Materiel> o: requiredOutputs)
 		{
 			try
 			{
-				for(Class<? extends Materiel> a: outputs)
+				for(Class<? extends Materiel> a: requiredOutputs)
 				{
 					Constructor c = a.getDeclaredConstructor(Class.forName("data.Location"), Class.forName("data.Direction"));
 					

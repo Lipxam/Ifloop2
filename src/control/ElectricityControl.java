@@ -1,10 +1,8 @@
 package control;
 
-import items.Machine;
-import items.Materiel;
-import machines.Wire;
+import items.*;
 import materiel.Electricity;
-import data.Level;
+import data.*;
 
 public class ElectricityControl
 {	

@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
-import data.Location;
+import data.*;
 
 public class Mirrior extends Machine
 {
@@ -20,7 +20,7 @@ public class Mirrior extends Machine
 	public List<Materiel> step(List<Item> inputs)
 	{
 		List<Materiel> result = new ArrayList<Materiel>();
-		for(Class<? extends Materiel> o: outputs)
+		for(Class<? extends Materiel> o: requiredOutputs)
 		{
 			try
 			{
